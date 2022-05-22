@@ -16,7 +16,7 @@ int igualChaves (void * ch1, void * ch2, int tipo){
 			return 1;
 		return 0;
 	}
-	return 0;
+	return 0;   
 }
 
 int compChaves (void * ch1, void * ch2, int tipo){
