@@ -15,7 +15,7 @@ struct _talhão
 {
     int valor;
     int escavado;
-};
+};..u.çouçou
 
 terreno criaTerreno(int l,int c)
 {
