@@ -32,6 +32,7 @@ int lerTerreno()
     return 0;
 }
 
+
 /*
 lerEquipas()
 {
