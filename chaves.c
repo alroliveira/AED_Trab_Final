@@ -10,7 +10,7 @@ int igualChaves (void * ch1, void * ch2, int tipo){
 	case 0:
 		if ( *((int*) ch1) == *((int*) ch2))
 			return 1;
-		return 0;
+		return 0; 
 	case 1:
 		if (strcmp ((char*) ch1, (char *)ch2) == 0)
 			return 1;
