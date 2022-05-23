@@ -16,3 +16,13 @@ struct _concurso
 };
 
 
+concurso criaConcurso()
+{
+    int l=0, c=0;
+    concurso c;
+    c = (concurso) malloc(sizeof(concurso));
+    if(c == NULL)
+        return NULL;
+    c->campo_de_jogo = criaTerreno(l,c);
+
+}

@@ -15,18 +15,17 @@
 //Prototypes
 int lerTerreno();
 int lerEquipas();
-void lerFicheiroEquipas();
 void interpretedor(concurso c);
 
 
 int main()
 {
     concurso c;
-    FILE *file = NULL;
+    //FILE *file = NULL;
 
-    c = criarConcurso();~
+    c = criarConcurso();
     lerTerreno();
-    lerFicheiroEquipas();
+    lerEquipas();
     interpretedor(c);
     destroiConcursoTD(c);
     
@@ -36,7 +35,7 @@ int lerTerreno()
 {
     int l, c;
     scanf("%d %d", l, c);
-    campo_de_jogo = criaTerreno(l,c);
+    //campo_de_jogo = criaTerreno(l,c);
     if (campo_de_jogo == NULL) 
     {
         return 1;
@@ -68,7 +67,7 @@ void interpretador(concurso c)       //(comandos a executar)//
         else
             printf("Comando invalido\n");
     }
-    cmdSair(c);                                         //   *sem a classificacao das equipas ao sair
+    cmdSair(c);    /* !!! QUE MERDA É ESTA ALEXA?*/ //   *sem a classificacao das equipas ao sair
 }
 
 
