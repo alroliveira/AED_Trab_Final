@@ -7,8 +7,11 @@
 #include <stdlib.h>
 
 //TADs
+#include "Sequencia.h"
 #include "Concurso.h"
 #include "Terreno.h"
+#include "Equipa.h"
+#include "Arqueologo.h"
 
 //constants
 #define MAXCMD 50
@@ -27,7 +30,7 @@ int main()
 
     c = criarConcurso();
     lerTerreno();
-    lerEquipas();
+    lerEquipas(c);
     interpretedor(c);
     destroiConcursoTD(c);
     
@@ -39,9 +42,31 @@ void lerTerreno()
     scanf("%d %d", l, c);
 }
 
-void lerEquipas()
+void lerEquipas(concurso c)
 {
-    
+    FILE *file = NULL;
+    equipa e;
+    arqueologo a;
+    char line[50];
+    int num, nome;
+    int i;
+
+    file = fopen("teams", "r");
+    if (file == NULL)
+		return;
+
+    while (fgets(line, sizeof(line)-1, file))
+	{
+        num = atoi(line);
+        fgets(line, sizeof(line)-1, file);
+        adicionarEquipaAoConcurso(c, nome);
+
+        for (i=1; i<=num; i++)
+        {
+            fgets(line, sizeof(line)-1, file);
+            adicionarArqueologoAEquipa(e, nome);
+        }
+	}
 }
 
 

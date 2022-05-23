@@ -16,6 +16,8 @@ int calculaClassificacao (equipa e);
 
 void destroiEquipa(equipa e);
 
+void destroiGenEquipa(void * e);
+
 void destroiEquipaEArqueologo(equipa e);
 
 equipa daArqueologoDaEquipa(equipa e, int pos);
