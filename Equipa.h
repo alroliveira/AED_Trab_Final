@@ -12,7 +12,7 @@ typedef struct _equipa * equipa;
 
 equipa criaEquipa();
 int calculaClassificacao (equipa e);
-void destroiParque(equipa e);
+void destroiEquipa(equipa e);
 void destroiEquipaEArqueologo(equipa e);
 equipa daArqueologoDaEquipa(equipa e, int pos);
 void adicionarArqueologoAEquipa(equipa e, char *nome);

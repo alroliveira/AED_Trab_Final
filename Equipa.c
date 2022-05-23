@@ -51,7 +51,7 @@ int calculaClassificacao (equipa e)
     return merito;
 }
 
-void destroiParque(equipa e)
+void destroiEquipa(equipa e)
 {
     destroiSequencia(e->arqueologos);
     free(e);
