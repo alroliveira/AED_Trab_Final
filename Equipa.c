@@ -9,6 +9,7 @@
 #include "Equipa.h"
 #include "Arqueologo.h"
 
+#define MAX_E 2000
 #define MAX_A_POR_E 500
 
 struct _equipa
@@ -21,9 +22,11 @@ equipa criaEquipa()
 {
     equipa e;
 
-    e = (equipa) malloc(sizeof(struct _equipa));
+    e = criaSequencia(MAX_E);
     if (e==NULL)
+    {
         return NULL;
+    }
 
     e->arqueologos = criaSequencia(MAX_A_POR_E);
     if (e->arqueologos==NULL)
