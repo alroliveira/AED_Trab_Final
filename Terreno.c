@@ -37,7 +37,7 @@ terreno criaTerreno(int l,int c,terreno t)
 }
 
 
-int preencheTerreno()
+void preencheTerreno(int l, int c)
 {
     int x;
 }

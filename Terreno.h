@@ -13,8 +13,8 @@ typedef struct _talhao * talhao;
 
 //Funções
 
-terreno criaTerreno(int l,int c)
+terreno criaTerreno(int l,int c);
 
-int preencheTerreno();
+void preencheTerreno(int l, int c);
 
 #endif

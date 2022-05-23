@@ -6,13 +6,13 @@
 #include <string.h>
 #include "Concurso.h"
 #include "Terreno.h"
+#include "Equipa.h"
 
 
 struct _concurso
 {
     terreno *campo_de_jogo;
-    int n_equipas;
-    char arqueologo;
+    equipa *n_equipas;
 };
 
 
@@ -24,6 +24,5 @@ concurso criaConcurso()
     if(c == NULL)
         return NULL;
     o->campo_de_jogo = criaTerreno(l,c);
-    
-
+    o->n_equipas =criaEquipa();
 }
