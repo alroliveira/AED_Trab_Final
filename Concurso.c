@@ -4,6 +4,8 @@
 
 #include <stdlib.h>
 #include <string.h>
+#include "Iterador.h"
+#include "Sequencia.h"
 #include "Concurso.h"
 #include "Terreno.h"
 #include "Equipa.h"
@@ -14,7 +16,6 @@ struct _concurso
     terreno *campo_de_jogo;
     equipa *equipas;
 };
-
 
 concurso criaConcurso()
 {
