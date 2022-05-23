@@ -32,7 +32,7 @@ int main()
     
 }
 
-int lerTerreno()
+void lerTerreno()
 {
     int l, c;
     scanf("%d %d", l, c);

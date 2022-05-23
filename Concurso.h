@@ -24,6 +24,6 @@ void estrela();
 
 void escavação();
 
-void equipa();
+void ver_equipa();
 
 #endif
