@@ -10,7 +10,7 @@
 
 struct _concurso
 {
-    terreno campo_de_jogo;
+    terreno *campo_de_jogo;
     int n_equipas;
     char arqueologo;
 };
@@ -19,10 +19,11 @@ struct _concurso
 concurso criaConcurso()
 {
     int l=0, c=0;
-    concurso c;
-    c = (concurso) malloc(sizeof(concurso));
+    concurso o;
+    o = (concurso) malloc(sizeof(concurso));
     if(c == NULL)
         return NULL;
-    c->campo_de_jogo = criaTerreno(l,c);
+    o->campo_de_jogo = criaTerreno(l,c);
+    
 
 }

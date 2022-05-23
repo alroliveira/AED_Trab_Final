@@ -8,13 +8,14 @@
 
 //TADs
 #include "Concurso.h"
+#include "Terreno.h"
 
 //constants
 #define MAXCMD 50
  
 //Prototypes
-int lerTerreno();
-int lerEquipas();
+void lerTerreno();
+void lerEquipas();
 void interpretedor(concurso c);
 
 
@@ -23,7 +24,7 @@ int main()
     concurso c;
     //FILE *file = NULL;
 
-    c = criarConcurso();
+    c = criarConcurso();  
     lerTerreno();
     lerEquipas();
     interpretedor(c);
@@ -35,12 +36,6 @@ int lerTerreno()
 {
     int l, c;
     scanf("%d %d", l, c);
-    //campo_de_jogo = criaTerreno(l,c);
-    if (campo_de_jogo == NULL) 
-    {
-        return 1;
-    }
-    return 0;
 }
 
 

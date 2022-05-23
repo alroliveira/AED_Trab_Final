@@ -8,10 +8,12 @@
 //TAD
 typedef struct _terreno * terreno;
 
-typedef struct _talhão * talhão;
+typedef struct _talhao * talhao;
 
 
 //Funções
+
+terreno criaTerreno(int l,int c)
 
 int preencheTerreno();
 

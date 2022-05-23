@@ -12,23 +12,22 @@ struct _terreno
 {
     int linhas;
     int colunas;
-    talhão * talhões;
+    talhao * talhoes;
 };
 
-struct _talhão
+struct _talhao
 {
     int valor;
     int escavado;
 };
 
 
-terreno criaTerreno(int l,int c)
+terreno criaTerreno(int l,int c,terreno t)
 {
-    terreno t;
     t = (terreno) malloc(sizeof(terreno));
     if(t==NULL) return NULL;
-    t->talhões = (talhão *) malloc(sizeof(talhão)* (l*c));
-    if(t->talhões == NULL){
+    t->talhoes = (talhao *) malloc(sizeof(talhao)* (l*c));
+    if(t->talhoes == NULL){
         free(t);
         return NULL;
     }
