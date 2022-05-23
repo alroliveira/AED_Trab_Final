@@ -12,7 +12,7 @@
 struct _concurso
 {
     terreno *campo_de_jogo;
-    equipa *n_equipas;
+    equipa *equipas;
 };
 
 
@@ -24,5 +24,5 @@ concurso criaConcurso()
     if(c == NULL)
         return NULL;
     o->campo_de_jogo = criaTerreno(l,c);
-    o->n_equipas =criaEquipa();
+    o->equipas = criaEquipa();
 }
