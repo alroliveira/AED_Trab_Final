@@ -12,8 +12,6 @@ typedef struct _concurso * concurso;
 
 concurso criaConcurso();
 
-int lerFicheiroEquipas();
-
 void equipas_em_concurso();
 
 void mostrarRiqueza();

@@ -15,7 +15,7 @@
 struct _concurso
 {
     terreno *campo_de_jogo;
-    sequencia equipas;
+    equipa *equipas;
 };
 
 concurso criaConcurso()
