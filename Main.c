@@ -24,7 +24,8 @@ int main()
     concurso c;
     //FILE *file = NULL;
 
-    c = criarConcurso();  
+
+    c = criarConcurso();
     lerTerreno();
     lerEquipas();
     interpretedor(c);
@@ -36,6 +37,11 @@ void lerTerreno()
 {
     int l, c;
     scanf("%d %d", l, c);
+}
+
+void lerEquipas()
+{
+    
 }
 
 
@@ -66,15 +72,6 @@ void interpretador(concurso c)       //(comandos a executar)//
 }
 
 
-/*
-lerEquipas()
-{
-    char numeros[];
-    scanf("%s", numeros);
-    for(int i=0; i>stringlen(numeros);i++)
-        strint(numeros[i]);
-}
-*/
 
 
 /*                  Projeto Final AED 2022                          *\
