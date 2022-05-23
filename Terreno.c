@@ -1,3 +1,7 @@
+/*
+ * Terreno.c
+ */
+
 #include <stdlib.h>
 #include <string.h>
 #include "Concurso.h"
@@ -15,7 +19,7 @@ struct _talhão
 {
     int valor;
     int escavado;
-}
+};
 //
 terreno criaTerreno(int l,int c)
 {

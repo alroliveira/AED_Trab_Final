@@ -1,3 +1,7 @@
+/*
+ * Concurso.h
+ */
+
 #ifndef concurso_h
 #define concurso_h
 
@@ -8,7 +12,7 @@ typedef struct _concurso * concurso;
 
 concurso criaConcurso();
 
-svoid equipas_em_concurso();
+void equipas_em_concurso();
 
 void mostrarRiqueza();
 
