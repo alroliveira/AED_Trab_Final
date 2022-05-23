@@ -10,6 +10,10 @@ typedef struct _arqueologo * arqueologo;
 
 /* Prototipos das funcoes associadas ao Arqueologo */
 
-int daMeritoArqueologo(arqueologo a);
+arqueologo criaArqueologo(char *nome);
+int calcularMeritoArqueologo(arqueologo a);
+char *daNomeArqueologo(arqueologo a);
+void destroiArqueologo(arqueologo a);
+void destroiGenArqueologo(void * a);
 
 #endif /* ARQUEOLOGO_H_ */

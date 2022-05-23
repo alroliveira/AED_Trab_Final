@@ -10,6 +10,12 @@ typedef struct _equipa * equipa;
 
 /* Prototipos das funcoes associadas a Equipa */
 
-int daClassificacao (equipa e);
+equipa criaEquipa();
+int calculaClassificacao (equipa e);
+void destroiParque(equipa e);
+void destroiEquipaEArqueologo(equipa e);
+equipa daArqueologoDaEquipa(equipa e, int pos);
+void adicionarArqueologoAEquipa(equipa e, char *nome);
+iterador iteradorEquipa(equipa e);
 
 #endif /* EQUIPA_H_ */

@@ -35,9 +35,7 @@ equipa criaEquipa()
     return e;
 }
 
-arqueologo daArqueologoEquipa()
-
-int daClassificacao (equipa e)
+int calculaClassificacao (equipa e)
 {
     int existe=0;
     int merito=0;
@@ -53,4 +51,33 @@ int daClassificacao (equipa e)
     return merito;
 }
 
-void destroiArqueologo()
+void destroiParque(equipa e)
+{
+    destroiSequencia(e->arqueologos);
+    free(e);
+}
+
+void destroiEquipaEArqueologo(equipa e)
+{
+    destroiSeqElems(e->arqueologos, destroiGenArqueologo);
+    free(e);
+}
+
+equipa daArqueologoDaEquipa(equipa e, int pos)
+{
+    return elementoPosSequencia(e->arqueologos, pos);
+}
+
+void adicionarArqueologoAEquipa(equipa e, char *nome)
+{
+    arqueologo a;
+    int pos;
+    a = criarArqueolog(nome);
+    pos = tamanhoSequencia(e->arqueologos) + 1;
+    adicionaPosSequencia(e->arqueologos, (void*) a, pos);
+}
+
+iterador iteradorEquipa(equipa e)
+{
+    return iteradorSequencia(e->arqueologos);
+}
