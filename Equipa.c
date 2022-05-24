@@ -16,15 +16,21 @@
 struct _equipa
 {
     sequencia arqueologos;
-    int emJogo;
-    char nome[NOME]
+    char nome[NOME];
+    int emJogo;                 //0 - se nunca teve em jogo     //1 - se ta em jogo ou ja teve e foi desqualificada
+};
+
+struct _equipa_emJogo
+{
+    sequencia arqueologos;
+    char nome[NOME];
 };
 
 equipa criaEquipa(char *nome)
 {
     equipa e;
 
-    e = criaSequencia(MAX_E);
+    e = criaSequencia(MAX_E); 
     if (e==NULL)
     {
         return NULL;
@@ -36,8 +42,8 @@ equipa criaEquipa(char *nome)
         free(e);
         return NULL;
     }
-    e->emJogo = 0;
     strcpy(e->nome, nome);
+    e->emJogo = 0;
     return e;
 }
 
@@ -91,4 +97,19 @@ void adicionarArqueologoAEquipa(equipa e, char *nome)
 iterador iteradorEquipa(equipa e)
 {
     return iteradorSequencia(e->arqueologos);
+}
+
+char *daNomeEquipa(equipa e)
+{
+    return e->nome;
+}
+
+int daEmJogoEquipa(equipa e)
+{
+    return e->emJogo;
+}
+
+void alteraEmJogoEquipa(equipa e, int emJogo)
+{
+    e->emJogo = emJogo;
 }
