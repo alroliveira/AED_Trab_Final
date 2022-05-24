@@ -4,18 +4,21 @@
 
 #include <stdlib.h>
 #include <string.h>
-#include "Iterador.h"
-#include "Sequencia.h"
+#include "iterador.h"
+#include "sequencia.h"
+#include "dicionario.h"
 #include "Concurso.h"
 #include "Terreno.h"
 #include "Equipa.h"
 #include "Arqueologo.h"
 
+#define MAX_E 2000
 
 struct _concurso
 {
     terreno *campo_de_jogo;
-    equipa *equipas;
+    sequencia equipas;
+    dicionario equipas_emJogo;
 };
 
 concurso criaConcurso()
@@ -27,6 +30,7 @@ concurso criaConcurso()
         return NULL;
     o->campo_de_jogo = criaTerreno(l,c);
     o->equipas =criaEquipa();
+    o->equipas_emJogo =criaDicionario(MAX_E, 1);
 }
 
 concurso daEquipaDoConcurso(concurso c, int pos)

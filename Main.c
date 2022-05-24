@@ -7,7 +7,8 @@
 #include <stdlib.h>
 
 //TADs
-#include "Sequencia.h"
+#include "sequencia.h"
+#include "dicionario.c"
 #include "Concurso.h"
 #include "Terreno.h"
 #include "Equipa.h"
@@ -15,6 +16,7 @@
 
 //constants
 #define MAXCMD 50
+#define MAXNOME 50
  
 //Prototypes
 void lerTerreno();
@@ -48,7 +50,7 @@ void lerEquipas(concurso c)
     equipa e;
     arqueologo a;
     char line[50];
-    int num, nome;
+    int num;
     int i;
 
     file = fopen("teams", "r");
@@ -59,12 +61,12 @@ void lerEquipas(concurso c)
 	{
         num = atoi(line);
         fgets(line, sizeof(line)-1, file);
-        adicionarEquipaAoConcurso(c, nome);
+        adicionarEquipaAoConcurso(c, line);
 
         for (i=1; i<=num; i++)
         {
             fgets(line, sizeof(line)-1, file);
-            adicionarArqueologoAEquipa(e, nome);
+            adicionarArqueologoAEquipa(e, line);
         }
 	}
 }
@@ -74,8 +76,9 @@ void lerEquipas(concurso c)
 void interpretador(concurso c)       //(comandos a executar)//
 {
     char linha [MAXCMD];
+    int i;
 
-    fgets(linha, MAXCMD, stdin);
+    strtok(linha, " ");
     while (strcmp(linha, "sair"))
     {
         if (!strcmp(linha, "riqueza"))
@@ -89,15 +92,44 @@ void interpretador(concurso c)       //(comandos a executar)//
         else if (!strcmp(linha, "reforco"))
             cmdReforco(c);
         else if (!strcmp(linha, "equipa"))
-            cmdEquipa(c);                               //
+            cmdEquipa(c);                            //
         else
             printf("Comando invalido\n");
     }
-    cmdSair(c);    /* !!! QUE MERDA É ESTA ALEXA?*/ //   *sem a classificacao das equipas ao sair
+    cmdSair(c);                                         //   *sem a classificacao das equipas ao sair
 }
 
+void cmdEquipa(concurso c)
+{
+    equipa e;
+    equipa_emJogo j;
+    char *nome;
+    int i;
 
+    scanf(" %d", &i);
+    if (tamanhoSequencia(e)<i)
+    {
+        printf("Equipa inexistente\n");
+    }
+    else if (daEmJogoEquipa(e))
+    {
+        printf("Equipa invalida\n");
+    }
+    else
+    {
+        nome = daNomeEquipa(e);
+        adicionaElemDicionario(j, nome, elementoPosSequencia(e, i));
+        alteraEmJogoEquipa(e, 1);
+    }
+}
 
+void cmdEstrela(concurso c)
+{
+    char nome[MAXNOME];
+
+    scanf(" %s", nome);
+    
+}
 
 /*                  Projeto Final AED 2022                          *\
         Nome: Rodrigo Fonseca    nº 63272 LEEC Turno: P1
