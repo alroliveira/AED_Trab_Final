@@ -15,6 +15,4 @@ typedef struct _talhao * talhao;
 
 terreno criaTerreno(int l,int c);
 
-void preencheTerreno(int l, int c,terreno t);
-
 #endif

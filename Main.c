@@ -20,8 +20,9 @@
 
 // Prototypes
 void lerTerreno(concurso con);
-void lerEquipas();
+void lerEquipas(concurso c);
 void interpretedor(concurso c);
+void iniciarConcurso(concurso c);
 
 int main()
 {
@@ -35,13 +36,14 @@ int main()
 
 void iniciarConcurso(concurso c)
 {
-    int l, c;
-    scanf("%d %d", l, c);
-    c = criarConcurso(l, c);
-    lerEquipas();
+    int linha, coluna;
+    scanf("%d %d", linha, coluna);
+    c = criarConcurso(linha, coluna);
+    lerEquipas(c);
 }
 
-void lerEquipas() // ||
+
+void lerEquipas(concurso c) // ||
 {
     FILE *file = NULL;
     equipa e;

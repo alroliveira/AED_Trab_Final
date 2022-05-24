@@ -36,9 +36,3 @@ terreno criaTerreno(int l,int c)
     t->linhas = l;
     return t;
 }
-
-
-void preencheTerreno(int l, int c, concurso con)
-{
-    
-}
