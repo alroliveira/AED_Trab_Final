@@ -45,3 +45,11 @@ void adicionarEquipaAoConcurso(concurso c, char *nome)
     pos = tamanhoSequencia(c->equipas) + 1;
     adicionaPosSequencia(c->equipas, (void*) e, pos);
 }
+
+ void destroiConcursoTD(concurso c)
+ {
+    destroiTerrenoECampoDeJogo();                                   //.....................................
+    destroiSeqElems(c->equipas, destroiGenArqueologo);
+    destroiDicEElems(c->equipas_emJogo, destroiGenArqueologo);
+    free(c);
+ }

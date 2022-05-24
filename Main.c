@@ -31,6 +31,7 @@ int main()
     iniciarConcurso(c);
     interpretedor(c);
     destroiConcursoTD(c);
+    return 0;
 }
 
 void iniciarConcurso(concurso c)
@@ -55,15 +56,15 @@ void lerEquipas(concurso c) // ||
     if (file == NULL)
         return;
 
-    while (fgets(line, sizeof(line) - 1, file))
+    while (fgets(line, sizeof(line), file))
     {
         num = atoi(line);
-        fgets(line, sizeof(line) - 1, file);
+        fgets(line, sizeof(line), file);
         adicionarEquipaAoConcurso(c, line);
 
         for (i = 1; i <= num; i++)
         {
-            fgets(line, sizeof(line) - 1, file);
+            fgets(line, sizeof(line), file);
             adicionarArqueologoAEquipa(e, line);
         }
     }
@@ -143,7 +144,7 @@ void cmdEstrela(concurso c, char* nome_equipa)
     }
     e_emJogo = elementoDicionario(dicionario d, void * ch);
     a = arqueologoComMaiorMerito(e_emJogo);
-    printf("Estrela de %s: %s", e_emJogo->nome, a->nome);
+    printf("Estrela de %s: %s\n", e_emJogo->nome, a->nome);
 }
 
 void cmdEquipa(concurso c, int i)
@@ -168,6 +169,22 @@ void cmdEquipa(concurso c, int i)
     }
 }
 
+void cmdSair (concurso c)                                           //.......(existemTesourosEnterrados()).......
+{
+    equipa_emJogo e_emJogo;
+
+    if(vazioDicionario(e_emJogo)){
+        printf("Todas as equipas foram expulsas.\n");
+    }
+    else{
+        if(existemTesourosEnterrados()){                            //.........................................
+            printf("Ainda havia tesouros por descobrir...\n");
+        }
+        else{
+            printf("Todos os tesouros foram descobertos!\n");
+        }
+    }
+}
 
 
 /*                  Projeto Final AED 2022                          *\

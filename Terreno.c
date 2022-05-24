@@ -36,3 +36,10 @@ terreno criaTerreno(int l,int c)
     t->linhas = l;
     return t;
 }
+
+
+/*  precisamos de uma funcao assim (pelo menos para o main)
+ *
+ *  void existemTesourosEnterrados()
+ *  void destroiTerrenoECampoDeJogo()
+ */
