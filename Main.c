@@ -78,10 +78,10 @@ void interpretador(concurso c) //(comandos a executar)//
         char *comando = strtok(linha, " ");
 
         if (!strcmp(comando, "riqueza")) {
-            cmdRiqueza(c);
+            cmdRiqueza(c);                                          //
         }
         else if (!strcmp(comando, "terreno")) {
-            cmdTerreno();
+            cmdTerreno();                                           //
         }
         else if (!strcmp(comando, "estrela"))
         {
@@ -89,8 +89,8 @@ void interpretador(concurso c) //(comandos a executar)//
             if (nome_equipa == NULL)
                 continue;
 
-            cmdEstrela(c, &nome_equipa);
-        } //
+            cmdEstrela(c, &nome_equipa);                            //
+        }
         else if (!strcmp(comando, "escavacao"))
         {
             char *sLinha = strtok(NULL, " ");
@@ -106,7 +106,7 @@ void interpretador(concurso c) //(comandos a executar)//
             int iColuna = atoi(sColuna);
             if (iLinha == 0 || iColuna == 0) continue;
 
-            cmdEscavacao();
+            cmdEscavacao();                                         //
         }
         else if (!strcmp(comando, "reforco")) {
             cmdReforco();
@@ -130,10 +130,27 @@ void interpretador(concurso c) //(comandos a executar)//
     cmdSair(c);                                                     //   *sem a classificacao das equipas ao sair
 }
 
+
+void cmdEstrela(concurso c, char* nome_equipa)
+{
+    int i;
+    equipa_emJogo e_emJogo;
+    arqueologo a;
+
+    if (existeElemDicionario(e_emJogo, nome_equipa))
+    {
+        printf("Equipa invalida\n");
+        return;
+    }
+    e_emJogo = elementoDicionario(dicionario d, void * ch);
+    a = arqueologoComMaiorMerito(e_emJogo);
+    printf("Estrela de %s: %s", e_emJogo->nome, a->nome);
+}
+
 void cmdEquipa(concurso c, int i)
 {
     equipa e;
-    equipa_emJogo j;
+    equipa_emJogo e_emJogo;
     char *nome;
    
     if (tamanhoSequencia(e) < i)
@@ -147,17 +164,12 @@ void cmdEquipa(concurso c, int i)
     else
     {
         nome = daNomeEquipa(e);
-        adicionaElemDicionario(j, nome, elementoPosSequencia(e, i));
+        adicionaElemDicionario(e_emJogo, nome, elementoPosSequencia(e, i));
         alteraEmJogoEquipa(e, 1);
     }
 }
 
-void cmdEstrela(concurso c, char* nome_equipa)
-{
-    char nome[MAXNOME];
 
-    scanf(" %s", nome);
-}
 
 /*                  Projeto Final AED 2022                          *\
         Nome: Rodrigo Fonseca    nº 63272 LEEC Turno: P1

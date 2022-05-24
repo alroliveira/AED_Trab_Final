@@ -113,3 +113,36 @@ void alteraEmJogoEquipa(equipa e, int emJogo)
 {
     e->emJogo = emJogo;
 }
+
+
+//
+
+
+int daNumElemsEquipa_emJogo(equipa_emJogo e_emJogo)
+{
+	return tamanhoDicionario(e_emJogo->arqueologos);
+}
+
+arqueologo arqueologoComMaiorMerito(equipa_emJogo e_emJogo)
+{
+    arqueologo maxArq = elementoPosSequencia(e->arqueologos, 1) ;
+    int num = tamanhoSequencia(e->arqueologos);
+
+    for (i=2; i<=num; i++)
+    {
+        arqueologo a = elementoPosSequencia(e->arqueologos, i)
+        if (maxArq->merito == a->merito){
+            if (maxArq->penalizacao == a->penalizacao){
+                if (strcmp(maxArq->nome, a->nome) < 0) {
+                    maxArq = a;
+                }
+            }
+            else if (maxArq->penalizacao < a->penalizacao){
+                maxArq = a;
+            }
+        }
+        else if (maxArq->merito < a->merito){
+            maxArq = a;
+        }
+    }
+}
