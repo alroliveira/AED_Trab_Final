@@ -12,16 +12,10 @@ typedef struct _concurso * concurso;
 
 concurso criaConcurso();
 
-void equipas_em_concurso();
+void destroiConcursoTD(concurso c);
 
-void mostrarRiqueza();
+concurso daEquipaDoConcurso(concursoc, int pos);
 
-void mostrarTerreno();
-
-void estrela();
-
-void escavação();
-
-void ver_equipa();
+void adicionarEquipaAoConcurso(concurso c,char * nome);
 
 #endif

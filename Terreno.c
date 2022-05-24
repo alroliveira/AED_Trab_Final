@@ -6,13 +6,14 @@
 #include <string.h>
 #include "Concurso.h"
 #include "Terreno.h"
+#include "sequencia.h"
 
 
 struct _terreno
 {
     int linhas;
     int colunas;
-    talhao * talhoes;
+    sequencia talhoes;
 };
 
 struct _talhao

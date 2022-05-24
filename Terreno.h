@@ -15,4 +15,15 @@ typedef struct _talhao * talhao;
 
 terreno criaTerreno(int l,int c);
 
+void destroiTerreno(terreno t);
+
+void destroiTerrenoTalhao(terreno t);
+
+int daValorTalhao(terreno t);
+
+int daValorTerreno(concurso c)
+
+int daEscavadoTalho(concurso c);
+
+
 #endif
