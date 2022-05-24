@@ -11,14 +11,16 @@
 
 #define MAX_E 2000
 #define MAX_A_POR_E 500
+#define NOME 50
 
 struct _equipa
 {
     sequencia arqueologos;
     int emJogo;
+    char nome[NOME]
 };
 
-equipa criaEquipa()
+equipa criaEquipa(char *nome)
 {
     equipa e;
 
@@ -35,6 +37,7 @@ equipa criaEquipa()
         return NULL;
     }
     e->emJogo = 0;
+    strcpy(e->nome, nome);
     return e;
 }
 
@@ -58,6 +61,11 @@ void destroiEquipa(equipa e)
 {
     destroiSequencia(e->arqueologos);
     free(e);
+}
+
+void destroiGenEquipa(void * e)
+{
+    destroiEquipa((equipa)e);
 }
 
 void destroiEquipaEArqueologo(equipa e)
