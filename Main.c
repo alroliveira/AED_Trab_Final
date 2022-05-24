@@ -49,7 +49,7 @@ void interpretador(concurso c) //(comandos a executar)//
     {
         char linha[MAXCMD];
         fgets(linha, sizeof(linha), stdin);
-        linha[strlen(linha) - 1] = '\0'; // remover \n
+        linha[strlen(linha) - 1] = '\0';
         char *comando = strtok(linha, " ");
 
         if (!strcmp(comando, "riqueza")) {                          //
@@ -138,7 +138,6 @@ void lerEquipas(concurso c)
         }
     }
 }
-
 
 
 void cmdRiqueza(concurso c)

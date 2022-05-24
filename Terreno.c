@@ -16,26 +16,27 @@ struct _terreno
     sequencia talhoes;
 };
 
-struct _talhao
-{
-    int valor;
-    int escavado;
-};
-
 
 terreno criaTerreno(int l,int c)
 {
-    terreno t;
-    t = (terreno) malloc(sizeof(terreno));
+    terreno T;
+    T = (terreno) malloc(sizeof(terreno));
     if(t==NULL) return NULL;
-    t->talhoes = (talhao *) malloc(sizeof(talhao)* (l*c));
-    if(t->talhoes == NULL){
-        free(t);
-        return NULL;
-    }
-    t->colunas = c;
-    t->linhas = l;
-    return t;
+    T->talhoes = criaTalhao(l,c)
+    T->colunas = c;
+    T->linhas = l;
+    return T;
+}
+
+void destroiTerreno(terreno T)
+{
+    free(T);
+}
+
+void destroiTerrenoTalhoes(terreno T)
+{
+    estroiSeqElems(e->arqueologos, destroiGenTalhoes);
+    free(T);
 }
 
 

@@ -17,13 +17,8 @@ terreno criaTerreno(int l,int c);
 
 void destroiTerreno(terreno t);
 
-void destroiTerrenoTalhao(terreno t);
-
-int daValorTalhao(terreno t);
+void destroiTerrenoTalhoes(terreno t);
 
 int daValorTerreno(concurso c)
-
-int daEscavadoTalho(concurso c);
-
 
 #endif
