@@ -19,7 +19,7 @@
 #define MAXNOME 50
  
 //Prototypes
-void lerTerreno();
+void lerTerreno(concurso con);
 void lerEquipas();
 void interpretedor(concurso c);
 
@@ -29,22 +29,22 @@ int main()
     concurso c;
     //FILE *file = NULL;
 
-
-    c = criarConcurso();
-    lerTerreno();
-    lerEquipas(c);
+    iniciarConcurso(c);
     interpretedor(c);
     destroiConcursoTD(c);
     
 }
 
-void lerTerreno()
+void iniciarConcurso(concurso c)
 {
     int l, c;
     scanf("%d %d", l, c);
+    c = criarConcurso(l,c);
+    lerEquipas();
 }
 
-void lerEquipas(concurso c)
+
+void lerEquipas() // ||
 {
     FILE *file = NULL;
     equipa e;

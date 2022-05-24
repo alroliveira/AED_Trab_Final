@@ -21,9 +21,8 @@ struct _concurso
     dicionario equipas_emJogo;
 };
 
-concurso criaConcurso()
+concurso criaConcurso(int l,int c)
 {
-    int l=0, c=0;
     concurso o;
     o = (concurso) malloc(sizeof(concurso));
     if(c == NULL)
