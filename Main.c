@@ -23,7 +23,16 @@ void lerTerreno(concurso con);
 void lerEquipas(concurso c);
 void interpretedor(concurso c);
 void iniciarConcurso(concurso c);
+    //Funçoes comando
+    void cmdRiqueza(concurso c);
+    void cmdTerreno(concurso c, int linha, int coluna);
+    void cmdEstrela(concurso c, char* nome_equipa);
+    void cmdEqipa(concurso c, int i);
+    void cmdEscavação();
+    void cmdSair(concurso c);
 
+
+//Funcoes
 int main()
 {
     concurso c;
@@ -31,44 +40,8 @@ int main()
     iniciarConcurso(c);
     interpretedor(c);
     destroiConcursoTD(c);
-    return 0;
 }
 
-void iniciarConcurso(concurso c)
-{
-    int linha, coluna;
-    scanf("%d %d", linha, coluna);
-    c = criarConcurso(linha, coluna);
-    lerEquipas(c);
-}
-
-
-void lerEquipas(concurso c) // ||
-{
-    FILE *file = NULL;
-    equipa e;
-    arqueologo a;
-    char line[50];
-    int num;
-    int i;
-
-    file = fopen("teams", "r");
-    if (file == NULL)
-        return;
-
-    while (fgets(line, sizeof(line), file))
-    {
-        num = atoi(line);
-        fgets(line, sizeof(line), file);
-        adicionarEquipaAoConcurso(c, line);
-
-        for (i = 1; i <= num; i++)
-        {
-            fgets(line, sizeof(line), file);
-            adicionarArqueologoAEquipa(e, line);
-        }
-    }
-}
 
 void interpretador(concurso c) //(comandos a executar)//
 {
@@ -126,10 +99,59 @@ void interpretador(concurso c) //(comandos a executar)//
         else if (!strcmp(comando, "sair")) break;
         else printf("Comando invalido\n");
     }
-    cmdSair(c);                                                     //   *sem a classificacao das equipas ao sair
+    cmdSair(c);                    //   *sem a classificacao das equipas ao sair
 }
 
+
+void iniciarConcurso(concurso c)
+{
+    int linha, coluna;
+    scanf("%d %d", linha, coluna);
+    c = criarConcurso(linha, coluna);
+    lerEquipas(c);
+}
+
+
+void lerEquipas(concurso c)
+{
+    FILE *file = NULL;
+    equipa e; 
+    arqueologo a; 
+    char line[50];
+    int num;
+    int i;
+
+    file = fopen("teams", "r");
+    if (file == NULL)
+        return;
+
+    while (fgets(line, sizeof(line), file))
+    {
+        num = atoi(line);
+        fgets(line, sizeof(line), file);
+        adicionarEquipaAoConcurso(c, line);
+
+        for (i = 1; i <= num; i++)
+        {
+            fgets(line, sizeof(line), file);
+            adicionarArqueologoAEquipa(e, line);
+        }
+    }
+}
+
+
+
+void cmdRiqueza(concurso c)
+{
 //
+}
+
+
+void cmdTerreno(concurso c, int linha, int coluna)
+{
+//
+}
+
 
 void cmdEstrela(concurso c, char* nome_equipa)
 {
@@ -146,6 +168,7 @@ void cmdEstrela(concurso c, char* nome_equipa)
     a = arqueologoComMaiorMerito(e_emJogo);
     printf("Estrela de %s: %s\n", e_emJogo->nome, a->nome);
 }
+
 
 void cmdEquipa(concurso c, int i)
 {
@@ -169,7 +192,14 @@ void cmdEquipa(concurso c, int i)
     }
 }
 
-void cmdSair (concurso c)                                           //.......(existemTesourosEnterrados()).......
+
+void cmdEscavação()
+{
+
+}
+
+
+void cmdSair (concurso c)       //.......(existemTesourosEnterrados()).......
 {
     equipa_emJogo e_emJogo;
 

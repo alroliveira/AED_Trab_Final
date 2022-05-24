@@ -21,6 +21,7 @@ struct _concurso
     dicionario equipas_emJogo;
 };
 
+
 concurso criaConcurso(int l,int c)
 {
     concurso o;
@@ -32,12 +33,23 @@ concurso criaConcurso(int l,int c)
     o->equipas_emJogo =criaDicionario(MAX_E, 1);
 }
 
-concurso daEquipaDoConcurso(concurso c, int pos)
+
+void destroiConcursoTD(concurso c) //tem de ser editado n destroi terreno
+ {
+    destroiTerrenoECampoDeJogo();                                   //.....................................
+    destroiSeqElems(c->equipas, destroiGenArqueologo);
+    destroiDicEElems(c->equipas_emJogo, destroiGenArqueologo);
+    free(c);
+ }
+
+
+concurso daEquipaDoConcurso(concurso c, int pos) // ONDE ESTA O PROTOTIPO DISTO?? ONDE E QUE ISTO ESTA USADO???
 {
     return elementoPosSequencia(c->equipas, pos);
 }
 
-void adicionarEquipaAoConcurso(concurso c, char *nome)
+
+void adicionarEquipaAoConcurso(concurso c, char *nome)// ONDE ESTA O PROTOTIPO DISTO?? ONDE E QUE ISTO ESTA USADO???
 {
     equipa e;
     int pos;
@@ -45,11 +57,3 @@ void adicionarEquipaAoConcurso(concurso c, char *nome)
     pos = tamanhoSequencia(c->equipas) + 1;
     adicionaPosSequencia(c->equipas, (void*) e, pos);
 }
-
- void destroiConcursoTD(concurso c)
- {
-    destroiTerrenoECampoDeJogo();                                   //.....................................
-    destroiSeqElems(c->equipas, destroiGenArqueologo);
-    destroiDicEElems(c->equipas_emJogo, destroiGenArqueologo);
-    free(c);
- }

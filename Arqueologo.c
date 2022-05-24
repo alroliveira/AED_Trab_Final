@@ -34,6 +34,7 @@ arqueologo criaArqueologo(char *nome)
     return a;
 }
 
+
 int calcularMeritoArqueologo(arqueologo a)
 {
     int merito = 0;
@@ -42,15 +43,18 @@ int calcularMeritoArqueologo(arqueologo a)
     return merito;
 }
 
+
 char *daNomeArqueologo(arqueologo a)
 {
     return a->nome;
 }
 
+
 void destroiArqueologo(arqueologo a)
 {
     free(a);
 }
+
 
 void destroiGenArqueologo(void * a)
 {

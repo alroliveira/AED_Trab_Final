@@ -26,6 +26,7 @@ struct _equipa_emJogo
     char nome[NOME];
 };
 
+
 equipa criaEquipa(char *nome)
 {
     equipa e;
@@ -47,6 +48,7 @@ equipa criaEquipa(char *nome)
     return e;
 }
 
+
 int calculaClassificacao (equipa e)
 {
     int existe=0;
@@ -63,16 +65,19 @@ int calculaClassificacao (equipa e)
     return merito;
 }
 
+
 void destroiEquipa(equipa e)
 {
     destroiSequencia(e->arqueologos);
     free(e);
 }
 
+
 void destroiGenEquipa(void * e)
 {
     destroiEquipa((equipa)e);
 }
+
 
 void destroiEquipaEArqueologo(equipa e)
 {
@@ -80,10 +85,12 @@ void destroiEquipaEArqueologo(equipa e)
     free(e);
 }
 
+
 equipa daArqueologoDaEquipa(equipa e, int pos)
 {
     return elementoPosSequencia(e->arqueologos, pos);
 }
+
 
 void adicionarArqueologoAEquipa(equipa e, char *nome)
 {
@@ -94,20 +101,24 @@ void adicionarArqueologoAEquipa(equipa e, char *nome)
     adicionaPosSequencia(e->arqueologos, (void*) a, pos);
 }
 
+
 iterador iteradorEquipa(equipa e)
 {
     return iteradorSequencia(e->arqueologos);
 }
+
 
 char *daNomeEquipa(equipa e)
 {
     return e->nome;
 }
 
+
 int daEmJogoEquipa(equipa e)
 {
     return e->emJogo;
 }
+
 
 void alteraEmJogoEquipa(equipa e, int emJogo)
 {
@@ -115,13 +126,11 @@ void alteraEmJogoEquipa(equipa e, int emJogo)
 }
 
 
-//
-
-
 int daNumElemsEquipa_emJogo(equipa_emJogo e_emJogo)
 {
 	return tamanhoDicionario(e_emJogo->arqueologos);
 }
+
 
 arqueologo arqueologoComMaiorMerito(equipa_emJogo e_emJogo)
 {
