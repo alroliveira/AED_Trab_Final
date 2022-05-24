@@ -22,8 +22,9 @@ struct _talhao
 };
 
 
-terreno criaTerreno(int l,int c,terreno t)
+terreno criaTerreno(int l,int c)
 {
+    terreno t;
     t = (terreno) malloc(sizeof(terreno));
     if(t==NULL) return NULL;
     t->talhoes = (talhao *) malloc(sizeof(talhao)* (l*c));
@@ -37,7 +38,7 @@ terreno criaTerreno(int l,int c,terreno t)
 }
 
 
-void preencheTerreno(int l, int c)
+void preencheTerreno(int l, int c, concurso con)
 {
-    int x;
+    
 }
