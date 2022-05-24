@@ -27,7 +27,6 @@ void iniciarConcurso(concurso c);
 int main()
 {
     concurso c;
-    // FILE *file = NULL;
 
     iniciarConcurso(c);
     interpretedor(c);
@@ -79,22 +78,20 @@ void interpretador(concurso c) //(comandos a executar)//
         linha[strlen(linha) - 1] = '\0'; // remover \n
         char *comando = strtok(linha, " ");
 
-        if (!strcmp(comando, "riqueza")) {
-            cmdRiqueza(c);                                          //
+        if (!strcmp(comando, "riqueza")) {                          //
+            cmdRiqueza(c);
         }
-        else if (!strcmp(comando, "terreno")) {
-            cmdTerreno();                                           //
+        else if (!strcmp(comando, "terreno")) {                     //
+            cmdTerreno();
         }
-        else if (!strcmp(comando, "estrela"))
-        {
+        else if (!strcmp(comando, "estrela")) {
             char *nome_equipa = strtok(NULL, " ");
             if (nome_equipa == NULL)
                 continue;
 
-            cmdEstrela(c, &nome_equipa);                            //
+            cmdEstrela(c, &nome_equipa);
         }
-        else if (!strcmp(comando, "escavacao"))
-        {
+        else if (!strcmp(comando, "escavacao")) {                   //
             char *sLinha = strtok(NULL, " ");
             if (sLinha == NULL) continue;
 
@@ -108,13 +105,12 @@ void interpretador(concurso c) //(comandos a executar)//
             int iColuna = atoi(sColuna);
             if (iLinha == 0 || iColuna == 0) continue;
 
-            cmdEscavacao();                                         //
+            cmdEscavacao();
         }
         else if (!strcmp(comando, "reforco")) {
             cmdReforco();
         }
-        else if (!strcmp(comando, "equipa"))
-        {
+        else if (!strcmp(comando, "equipa")) {
             char *num_equipa = strtok(NULL, " ");
             if (num_equipa == NULL) continue;
 
@@ -124,7 +120,7 @@ void interpretador(concurso c) //(comandos a executar)//
                 printf("Equipa inexistente\n"); continue;
             }
             
-            cmdEquipa(c, i);                                        //
+            cmdEquipa(c, i);
         }
         else if (!strcmp(comando, "sair")) break;
         else printf("Comando invalido\n");
@@ -132,6 +128,7 @@ void interpretador(concurso c) //(comandos a executar)//
     cmdSair(c);                                                     //   *sem a classificacao das equipas ao sair
 }
 
+//
 
 void cmdEstrela(concurso c, char* nome_equipa)
 {
