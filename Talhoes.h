@@ -19,6 +19,11 @@ void destroiGenTalhoes(void * t);
 
 int valorTalhao(talhao t);
 
-int daEscavadoTalhao(talhao t); 
+int daEscavadoTalhao(talhao t);
 
+int daValorTalhao(talhao t);
+
+void alteraValorTalhao(talhao t, int valor);
+
+void alteraEscavadoTalhao(talhao t, int Escavado);
 #endif

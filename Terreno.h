@@ -5,6 +5,8 @@
 #ifndef Terreno_h
 #define Terreno_h
 
+#include "Arqueologo.h"
+
 //TAD
 typedef struct _terreno * terreno;
 
@@ -29,7 +31,7 @@ int existemTesourosEnterrados(terreno T);
 
 char * criaMatriz(terreno T,int l, int c);
 
-int daLCSalto(equipa e, int Linha, int Coluna, terreno T, int controlo);
+int daLCSalto(arqueologo a, int lS, int cS, terreno T, int controlo);
 
 
 #endif

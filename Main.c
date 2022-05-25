@@ -181,7 +181,7 @@ void cmdEstrela(concurso c, char* nome_equipa)
     }
     eq = elementoPosSequencia(e, daNEquipaPorNomeEquipa(e, nome_equipa));
     a = arqueologoComMaiorMerito(eq);
-    printf("Estrela de %s: %s\n", eq->nome, a->nome);
+    printf("Estrela de %s: %s\n", daNomeEquipa(eq), daNomeArqueologo(a));
 }
 
 
@@ -208,7 +208,7 @@ void cmdEquipa(concurso c, int i)
 
 void cmdEscavacao(concurso c, int lSalto, int cSalto, char *nome)
 {
-    equipa e;
+    equipa e = daEquipa(e, nome);
     terreno T;
     talhao t;
     int lFinal, cFinal;
@@ -223,24 +223,43 @@ void cmdEscavacao(concurso c, int lSalto, int cSalto, char *nome)
         printf("Equipa invalida\n");
     }
     else{
-««
-        if(lFinal>daLinhaTerreno(T) || cFinal>daColunaTerreno(T)){
-            destroiArqueologo(e->arqueologo);
-            if(vaziaSequencia(e)){
-                printf("%s foi expulsa\n", nome);
-                return;
-            }
-        }
-        t = elementoPosSequencia(t,lFinal * cFinal); 
-        if(daEscavadoTalhao(t)<0){
-            
-        }
-        it = iterador iteradorEquipa(e);
-        while(temSeguinteIterador(it))
+        if(temSeguinteIterador(it))
         {
             a = (arqueologo)seguinteIterador(it);
-            /////////...................................................................
+            lFinal = daLCSalto(a, lSalto, cSalto, T, 1);
+            cFinal = daLCSalto(a, lSalto, cSalto, T, 0);
+            t = elementoPosSequencia(t, lFinal+cFinal);
+
+            if(lFinal>daLinhaTerreno(T) || cFinal>daColunaTerreno(T)){
+                destroiArqueologo(a);
+                if(vaziaSequencia(e)){
+                    printf("%s foi expulsa\n", nome);
+                    return;
+                }
+                return;
+            }
+            
+            if (!daEscavadoTalhao(t) && daValorTalhao(t)){
+                t->escavado = t->escavado + 1;
+                a->tesouros += daEscavadoTalhao(t);
+                t->valor = 0;
+            }
+            else if (!daEscavadoTalhao(t)){
+                t->escavado += 1;
+            }
+            else{
+                t->escavado += 1;
+            }
         }
+        
+        
+        
+        
+        
+        t = elementoPosSequencia(t,lFinal * cFinal); 
+        
+        it = iteradorEquipa(e);
+        
         destroiIterador(it);
     }
 }

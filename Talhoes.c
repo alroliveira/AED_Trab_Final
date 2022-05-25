@@ -50,7 +50,18 @@ int valorTalhao(talhao t)
 
 int daEscavadoTalhao(talhao t)
 {
-    if (t->escavado!=0)
-        return 1;
-    return 0; 
+    return t->escavado;
+}
+
+int daValorTalhao(talhao t)
+{
+    return t->valor;
+}
+
+void alteraValorTalhao(talhao t, int valor){
+    t->valor = valor;
+}
+
+void alteraEscavadoTalhao(talhao t, int escavado){
+    t->escavado = escavado;
 }

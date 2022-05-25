@@ -46,4 +46,6 @@ void alteraNumEquipa (equipa e, int num);
 
 void alteraNomeEquipa (equipa e, char *nome);
 
+equipa daEquipa(equipa e, char *nome);
+
 #endif /* EQUIPA_H_ */

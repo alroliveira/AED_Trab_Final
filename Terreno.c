@@ -27,8 +27,8 @@ terreno criaTerreno(int l,int c)
 {
     terreno T;
     T = (terreno) malloc(sizeof(terreno));
-    if(t==NULL) return NULL;
-    T->talhoes = criaTalhao(l,c)
+    if(T==NULL) return NULL;
+    T->talhoes = criaTalhao(l,c);
     T->colunas = c;
     T->linhas = l;
     return T;
@@ -43,7 +43,7 @@ void destroiTerreno(terreno T)
 
 void destroiTerrenoTalhoes(terreno T)
 {
-    estroiSeqElems(e->arqueologos, destroiGenTalhoes);
+    destroiSeqElems(T->talhoes, destroiGenTalhoes);
     free(T);
 }
 
@@ -99,7 +99,7 @@ char * criaMatriz(terreno T,int l,int c)
     {
         for (int j = 0; j < c; j++)
         {
-            if(daEscavadoTalhao(T->talhoes)==0)
+            if(daValorTalhao(T->talhoes)==0)
                 m[i][j] = '-';
             else
                 m[i][j] = '*';
@@ -111,15 +111,15 @@ char * criaMatriz(terreno T,int l,int c)
 
 
     //pos onde ta + o salto
-int daLCSalto(equipa e, int Linha, int Coluna, terreno T, int controlo) //se controlo==1 da as linhas, se controlo==0 da colunas   
+int daLCSalto(arqueologo a, int lS, int cS, terreno T, int controlo) //se controlo==1 da as linhas, se controlo==0 da colunas   
 {
     int lA, cA;
     int lFinal, cFinal;
-    lA = daLCArqueologo(e->arqueologo, T, 1);
-    cA = daLCArqueologo(e->arqueologo, T, 0);
+    lA = daLCArqueologo(a, T, 1);
+    cA = daLCArqueologo(a, T, 0);
     
-    lFinal = lA + Linha;
-    cFinal = cA + Coluna;
+    lFinal = lA + lS;
+    cFinal = cA + cS;
 
     if (controlo)
         return lFinal;

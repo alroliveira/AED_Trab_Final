@@ -40,7 +40,7 @@ arqueologo criaArqueologo(char *nome)
     return a;
 }
 
-/*
+
 int calcularMeritoArqueologo(arqueologo a)
 {
     int merito = 0;
@@ -48,13 +48,13 @@ int calcularMeritoArqueologo(arqueologo a)
     merito = a->tesouros - a->penalizacao;
     return merito;
 }
-*/
-/*
+
+
 char *daNomeArqueologo(arqueologo a)
 {
     return a->nome;
 }
-*/
+
 
 void destroiArqueologo(arqueologo a)
 {

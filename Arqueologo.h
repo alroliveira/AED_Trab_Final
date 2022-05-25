@@ -5,6 +5,8 @@
 #ifndef _H_ARQUEOLOGO
 #define _H_ARQUEOLOGO
 
+#include "Terreno.h"
+
 /* Tipo de dados: Arqueologo */
 typedef struct _arqueologo * arqueologo;
 
@@ -12,9 +14,9 @@ typedef struct _arqueologo * arqueologo;
 
 //arqueologo criaArqueologo(char *nome); 
 
-//int calcularMeritoArqueologo(arqueologo a);
+int calcularMeritoArqueologo(arqueologo a);
 
-//char *daNomeArqueologo(arqueologo a);
+char *daNomeArqueologo(arqueologo a);
 
 void destroiArqueologo(arqueologo a);
 

@@ -36,7 +36,7 @@ concurso criaConcurso(int l,int c)
 
 void destroiConcursoTD(concurso c) //tem de ser editado n destroi terreno
  {
-    destroiTerrenoTalhoes(c->terreno);                                   //.....................................
+    destroiTerrenoTalhoes(c->campo_de_jogo);                                   //.....................................
     destroiSeqElems(c->equipas, destroiGenArqueologo);
     free(c);
  }
@@ -56,6 +56,6 @@ void adicionarEquipaAoConcurso(concurso c, char *nome)// ONDE ESTA O PROTOTIPO D
     alteraNomeEquipa (e, nome);
     pos = tamanhoSequencia(c->equipas) + 1;
     adicionaPosSequencia(c->equipas, (void*) e, pos);
-    void alteraNumEquipa (e, pos)
+    alteraNumEquipa(e, pos);
 }
 

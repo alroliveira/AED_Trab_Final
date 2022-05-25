@@ -173,10 +173,10 @@ sequencia arqueologoComMaiorMerito(equipa e)
     arqueologo maxArq = elementoPosSequencia(e->arqueologos, 1) ;
     int num = tamanhoSequencia(e->arqueologos);
 
-    for (i=2; i<=num; i++)
+    for (int i=2; i<=num; i++)
     {
-        arqueologo a = elementoPosSequencia(e->arqueologos, i)
-        if (maxArq->merito == a->merito){
+        arqueologo a = elementoPosSequencia(e->arqueologos, i);
+        if (calcularMeritoArqueologo(maxArq) == calcularMeritoArqueologo(a)){
             if (maxArq->penalizacao == a->penalizacao){
                 if (strcmp(maxArq->nome, a->nome) < 0) {
                     maxArq = a;
@@ -186,7 +186,7 @@ sequencia arqueologoComMaiorMerito(equipa e)
                 maxArq = a;
             }
         }
-        else if (maxArq->merito < a->merito){
+        else if (calcularMeritoArqueologo(maxArq) < calcularMeritoArqueologo(a)){
             maxArq = a;
         }
     }
@@ -198,5 +198,13 @@ void alteraNumEquipa (equipa e, int num){
 }
 
 void alteraNomeEquipa (equipa e, char *nome){
-    e->nome = nome;
+    strcpy(e->nome, nome);
 }
+
+equipa daEquipa(equipa e, char *nome){
+    int i;
+    for (i = 1; i<=tamanhoSequencia(e);i++)
+        if (strcmp(nome, e->nome))
+            return e;
+    return -1;
+}  
