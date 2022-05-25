@@ -57,15 +57,15 @@ void iniciarConcurso(concurso c)
 
 void interpretador(concurso c) //(comandos a executar)//
 {
-    printf("interpretador\n");
     while (1)
     {
         char linha[MAXCMD];
         fgets(linha, sizeof(linha), stdin);
+        //printf("c------------");
         getc(stdin);
-        linha[strlen(linha) - 1] = '\0';
+        //linha[strlen(linha) - 1] = '\0';
         char *comando = strtok(linha, " ");
-
+        printf("2c");
         if (!strcmp(comando, "riqueza")) {                          //
             cmdRiqueza(c);
         }
@@ -73,11 +73,13 @@ void interpretador(concurso c) //(comandos a executar)//
             cmdTerreno(c);
         }
         else if (!strcmp(comando, "estrela")) {
+            printf("a");
             char *nome_equipa = strtok(NULL, " ");
             if (nome_equipa == NULL)
+                //printf("c");
                 continue;
-
-            cmdEstrela(c, &nome_equipa);
+            //printf("b");
+            cmdEstrela(c, nome_equipa);
         }
         else if (!strcmp(comando, "escavacao")) {                   //
             char *sLinha = strtok(NULL, " ");
@@ -120,8 +122,7 @@ void interpretador(concurso c) //(comandos a executar)//
 void lerEquipas(concurso c)
 {
     FILE *file = NULL;
-    equipa e; 
-    arqueologo a; 
+    equipa e ; 
     char line[50];
     int num;
     int i;
@@ -180,7 +181,7 @@ void cmdEstrela(concurso c, char* nome_equipa)
         printf("Equipa invalida\n");
         return;
     }
-    eq = elementoPosSequencia(e, daNEquipaPorNomeEquipa(e, nome_equipa));
+    eq = (equipa)elementoPosSequencia((sequencia)e, daNEquipaPorNomeEquipa(e, nome_equipa));
     a = arqueologoComMaiorMerito(eq);
     printf("Estrela de %s: %s\n", daNomeEquipa(eq), daNomeArqueologo(a));
 }
@@ -189,9 +190,8 @@ void cmdEstrela(concurso c, char* nome_equipa)
 void cmdEquipa(concurso c, int i)
 {
     equipa e;
-    char *nome;
    
-    if (tamanhoSequencia(e) < i)
+    if (tamanhoSequencia((sequencia)e) < i)
     {
         printf("Equipa inexistente\n");
     }
@@ -201,7 +201,6 @@ void cmdEquipa(concurso c, int i)
     }
     else
     {
-        nome = daNomeEquipa(e);
         alteraEmJogoEquipa(e, 1);
     }
 }
@@ -229,11 +228,11 @@ void cmdEscavacao(concurso c, int lSalto, int cSalto, char *nome)
             a = (arqueologo)seguinteIterador(it);
             lFinal = daLCSalto(a, lSalto, cSalto, T, 1);
             cFinal = daLCSalto(a, lSalto, cSalto, T, 0);
-            t = elementoPosSequencia(t, lFinal+cFinal);
+            t = elementoPosSequencia((sequencia)t, lFinal+cFinal);
 
             if(lFinal>daLinhaTerreno(T) || cFinal>daColunaTerreno(T)){
                 destroiArqueologo(a);
-                if(vaziaSequencia(e)){
+                if(vaziaSequencia((sequencia)e)){
                     printf("%s foi expulsa\n", nome);
                     return;
                 }
@@ -254,11 +253,7 @@ void cmdEscavacao(concurso c, int lSalto, int cSalto, char *nome)
             }
         }
         
-        
-        
-        
-        
-        t = elementoPosSequencia(t,lFinal * cFinal); 
+        t = elementoPosSequencia((sequencia)t,lFinal * cFinal); 
         
         it = iteradorEquipa(e);
         

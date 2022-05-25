@@ -19,7 +19,7 @@ terreno criaTerreno(int l,int c)
     terreno T;
     T = (terreno) malloc(sizeof(terreno));
     if(T==NULL) return NULL;
-    T->talhoes = criaTalhao(l,c);
+    T->talhoes = (sequencia)criaTalhao(l,c);
     T->colunas = c;
     T->linhas = l;
     return T;
@@ -90,7 +90,7 @@ char ** criaMatriz(terreno T,int l,int c)
     {
         for (int j = 0; j < c; j++)
         {
-            if(daValorTalhao(T->talhoes)==0)
+            if(daValorTalhao((talhao)T->talhoes)==0)
                 m[i][j] = '-';
             else
                 m[i][j] = '*';

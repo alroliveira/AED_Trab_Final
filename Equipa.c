@@ -31,7 +31,7 @@ equipa criaEquipa()
 {
     equipa e;
 
-    e = criaSequencia(MAX_E); 
+    e = (equipa)criaSequencia(MAX_E); 
     if (e==NULL)
     {
         return NULL;
@@ -123,7 +123,7 @@ void alteraEmJogoEquipa(equipa e, int emJogo)
     e->emJogo = emJogo;
     if(emJogo==0)
     {
-        removePosSequencia(e, e->nEquipa);
+        removePosSequencia((sequencia)e, e->nEquipa);
         atualizaNumEquipa(e);
     }
 }
@@ -132,7 +132,7 @@ void alteraEmJogoEquipa(equipa e, int emJogo)
 void atualizaNumEquipa(equipa e)
 {
     int i;
-    for(i=1; i<=tamanhoSequencia(e); i++)
+    for(i=1; i<=tamanhoSequencia((sequencia)e); i++)
         e->nEquipa=i;
 }
 
@@ -161,14 +161,14 @@ int existPorNomeEquipa(equipa e, void *nome){
 
 int daNEquipaPorNomeEquipa(equipa e, void *nome){
 	int i;
-	for (i = 1; i<=tamanhoSequencia(e);i++)
+	for (i = 1; i<=tamanhoSequencia((sequencia)e);i++)
 		if (strcmp(nome, e->nome))
 			return i;
 	return -1;
 } 
 
 
-sequencia arqueologoComMaiorMerito(equipa e)
+arqueologo arqueologoComMaiorMerito(equipa e)
 {
     arqueologo maxArq = elementoPosSequencia(e->arqueologos, 1) ;
     int num = tamanhoSequencia(e->arqueologos);
@@ -190,6 +190,8 @@ sequencia arqueologoComMaiorMerito(equipa e)
             maxArq = a;
         }
     }
+
+    return maxArq;
 }
 
 
@@ -203,8 +205,8 @@ void alteraNomeEquipa (equipa e, char *nome){
 
 equipa daEquipa(equipa e, char *nome){
     int i;
-    for (i = 1; i<=tamanhoSequencia(e);i++)
+    for (i = 1; i<=tamanhoSequencia((sequencia)e);i++)
         if (strcmp(nome, e->nome))
             return e;
-    return -1;
-}  
+    return NULL;
+} 

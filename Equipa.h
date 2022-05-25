@@ -5,6 +5,8 @@
 #ifndef _H_EQUIPA
 #define _H_EQUIPA
 
+#include "Arqueologo.h"
+
 /* Tipo de dados: Equipa */
 typedef struct _equipa * equipa; 
 
@@ -40,7 +42,7 @@ int existPorNomeEquipa(equipa e, void *nome);
 
 int daNEquipaPorNomeEquipa(equipa e, void *nome);
 
-sequencia arqueologoComMaiorMerito(equipa e);
+arqueologo arqueologoComMaiorMerito(equipa e);
 
 void alteraNumEquipa (equipa e, int num);
 

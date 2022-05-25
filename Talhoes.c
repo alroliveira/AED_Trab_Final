@@ -15,8 +15,7 @@
 
 talhao criaTalhao(int l,int c)
 {
-    talhao t;
-    t = (talhao *) malloc(sizeof(talhao)* (l*c));
+    talhao t = (talhao) malloc(sizeof(talhao)* (l*c));
     if(t == NULL) return NULL;
     return t;
 }

@@ -30,7 +30,8 @@ concurso criaConcurso(int l,int c)
     if(o == NULL)
         return NULL;
     o->campo_de_jogo = criaTerreno(l,c);
-    o->equipas =criaEquipa();
+    o->equipas = (sequencia)criaEquipa();
+    return o;
 }
 
 
