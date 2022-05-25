@@ -191,3 +191,7 @@ sequencia arqueologoComMaiorMerito(equipa e)
 void alteraNumEquipa (equipa e, int num){
     e->nEquipa=num;
 }
+
+void alteraNomeEquipa (equipa e, char *nome){
+    e->nome = nome;
+}

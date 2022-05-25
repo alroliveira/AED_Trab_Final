@@ -8,7 +8,6 @@
 
 // TADs
 #include "sequencia.h"
-#include "dicionario.c"
 #include "Concurso.h"
 #include "Terreno.h"
 #include "Equipa.h"

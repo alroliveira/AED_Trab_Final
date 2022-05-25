@@ -71,8 +71,7 @@ int daPosArqueologo(arqueologo a)
 
 int daLCArqueologo(arqueologo a, terreno T, int controlo) //se controlo==1 da as linhas, se controlo==0 da colunas   
 {
-    int pos, l, c, lT,cT;
-    lT= daLinhaTerreno(T);
+    int pos, l, c, cT;
     cT=daColunaTerreno(T);
     pos = daPosArqueologo(a);
     int k;

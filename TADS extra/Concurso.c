@@ -6,7 +6,6 @@
 #include <string.h>
 #include "iterador.h"
 #include "sequencia.h"
-#include "dicionario.h"
 #include "Concurso.h"
 #include "Terreno.h"
 #include "Equipa.h"
@@ -17,8 +16,7 @@
 struct _concurso
 {
     terreno campo_de_jogo;
-    sequencia equipas;
-    dicionario equipas_emJogo;
+    equipa equipas;
 };
 
 
@@ -30,7 +28,6 @@ concurso criaConcurso(int l,int c)
         return NULL;
     o->campo_de_jogo = criaTerreno(l,c);
     o->equipas =criaEquipa();
-    o->equipas_emJogo =criaDicionario(MAX_E, 1);
 }
 
 
@@ -52,7 +49,8 @@ void adicionarEquipaAoConcurso(concurso c, char *nome)// ONDE ESTA O PROTOTIPO D
 {
     equipa e;
     int pos;
-    e = criaArqueologo(nome);
+    e = criaEquipa();
+    alteraNomeEquipa (e, nome);
     pos = tamanhoSequencia(c->equipas) + 1;
     adicionaPosSequencia(c->equipas, (void*) e, pos);
     void alteraNumEquipa (e, pos)

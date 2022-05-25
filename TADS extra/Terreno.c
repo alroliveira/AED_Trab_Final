@@ -5,8 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "iterador.h"
-#include "sequencia.h"
-#include "dicionario.h"
+#include "sequencia.h"s
 #include "Concurso.h"
 #include "Terreno.h"
 #include "Equipa.h"
