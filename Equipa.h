@@ -24,7 +24,7 @@ equipa criaEquipa();
 
 void adicionarArqueologoAEquipa(equipa e, char *nome);
 
-//iterador iteradorEquipa(equipa e);
+iterador iteradorEquipa(equipa e);
 
 char *daNomeEquipa(equipa e);
 

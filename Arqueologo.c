@@ -8,6 +8,7 @@
 #include "Sequencia.h"
 #include "Equipa.h"
 #include "Arqueologo.h"
+#include "Terreno.h"
 
 #define NOME 50
 
@@ -66,4 +67,24 @@ void destroiGenArqueologo(void * a)
 int daPosArqueologo(arqueologo a)
 {
     return a->posição;
+}
+
+int daLCArqueologo(arqueologo a, terreno T, int controlo) //se controlo==1 da as linhas, se controlo==0 da colunas   
+{
+    int pos, l, c, lT,cT;
+    lT= daLinhaTerreno(T);
+    cT=daColunaTerreno(T);
+    pos = daPosArqueologo(a);
+    int k;
+
+    for (k=cT-1; k>=0;k--){
+        if((pos+k)%cT==0){
+            c=cT-k;
+            l=(pos+k)/cT;
+        }
+    }
+    if (controlo)
+        return l;
+    else
+        return c;
 }

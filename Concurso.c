@@ -58,28 +58,3 @@ void adicionarEquipaAoConcurso(concurso c, char *nome)// ONDE ESTA O PROTOTIPO D
     e->nEquipa = pos;
 }
 
-    //pos onde ta + o salto
-int daLFinal(equipa e, int iLinha, int iColuna, terreno T, int controlo) //se controlo==1 da as linhas, se controlo==0 da colunas   
-{
-    int linhaF, pos, l, c, lT,cT;
-    lT= daLinhaTerreno(T);
-    cT=daColunaTerreno(T);
-    pos = daPosArqueologo(e->arqueologo);
-    
-
-    if()
-
-
-
-
-    if (controlo)
-        return l;
-    else
-        return c;
-}
-
-
-int daCFinal(equipa e, iColuna, terreno T)
-{
-
-}

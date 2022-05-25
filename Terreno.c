@@ -107,6 +107,27 @@ char * criaMatriz(terreno T,int l,int c)
     return m;
 }
 
+
+    //pos onde ta + o salto
+int daLCSalto(equipa e, int Linha, int Coluna, terreno T, int controlo) //se controlo==1 da as linhas, se controlo==0 da colunas   
+{
+    int pos, lA, cA, lT, cT;
+    int lFinal, cFinal;
+    lT= daLinhaTerreno(T);
+    cT=daColunaTerreno(T);
+    lA = daLCArqueologo(e->arqueologo, T, 1);
+    cA = daLCArqueologo(e->arqueologo, T, 0);
+    
+    lFinal = lA + Linha;
+    cFinal = cA + Coluna;
+
+    if (controlo)
+        return lFinal;
+    else
+        return cFinal;
+}
+
+
 /*  precisamos de uma funcao assim (pelo menos para o main)
  * 
  *  void existemTesourosEnterrados()

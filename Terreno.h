@@ -29,4 +29,7 @@ int existemTesourosEnterrados(terreno T);
 
 char * criaMatriz(terreno T,int l, int c);
 
+int daLCSalto(equipa e, int Linha, int Coluna, terreno T, int controlo);
+
+
 #endif

@@ -21,4 +21,7 @@ void destroiArqueologo(arqueologo a);
 void destroiGenArqueologo(void * a);
 
 int daPosArqueologo(arqueologo a);
+
+int daLCArqueologo(arqueologo a, terreno T, int controlo);
+
 #endif /* ARQUEOLOGO_H_ */

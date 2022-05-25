@@ -18,8 +18,4 @@ concurso daEquipaDoConcurso(concursoc, int pos);
 
 void adicionarEquipaAoConcurso(concurso c,char * nome);
 
-int daLFinal(equipa e, int iLinha, terreno T);
-
-int daCFinal(equipa e, iColuna, terreno T);
-
 #endif

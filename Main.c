@@ -208,11 +208,15 @@ void cmdEquipa(concurso c, int i)
 }
 
 
-void cmdEscavacao(concurso c, int iLinha, int iColuna, char sNome)
+void cmdEscavacao(concurso c, int lSalto, int cSalto, char nome)
 {
     equipa e;
-    Terreno T;
-
+    terreno T;
+    int lFinal, cFinal;
+    int i;
+    arqueologo a; 
+    iterador it;
+    
     if (iLinha==0 || iColuna==0){
         printf("Salto invalido\n");
     }
@@ -220,8 +224,22 @@ void cmdEscavacao(concurso c, int iLinha, int iColuna, char sNome)
         printf("Equipa invalida\n");
     }
     else{
-        daLFinal(e, iLinha, T);
-        daCFinal(e, iColuna, T);
+        lFinal = daLCSalto(e, lSalto, cSalto, T, 1);
+        cFinal = daLCSalto(e, lSalto, cSalto, T, 0);
+        if(lFinal>daLinhaTerreno(T) || cFinal>daColunaTerreno(T)){
+            destroiArqueologo(e->arqueologo);
+            if(vaziaSequencia(e)){
+                printf("%s foi expulsa\n", nome);
+                return;
+            }
+        }
+        it = iterador iteradorEquipa(e);
+        while(temSeguinteIterador(it))
+        {
+            a = (arqueologo)seguinteIterador(it);
+            /////////...................................................................
+        }
+        destroiIterador(it);
     }
 }
 

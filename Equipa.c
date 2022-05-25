@@ -94,12 +94,12 @@ void adicionarArqueologoAEquipa(equipa e, char *nome)
     adicionaPosSequencia(e->arqueologos, (void*) a, pos);
 }
 
-/*
+
 iterador iteradorEquipa(equipa e)
 {
     return iteradorSequencia(e->arqueologos);
 }
-*/
+
 
 char *daNomeEquipa(equipa e)
 {
