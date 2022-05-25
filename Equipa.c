@@ -18,12 +18,7 @@ struct _equipa
     sequencia arqueologos;
     char nome[NOME];
     int emJogo;                 //0 - se nunca teve em jogo     //1 - se ta em jogo ou ja teve e foi desqualificada
-};
-
-struct _equipa_emJogo
-{
-    sequencia arqueologos;
-    char nome[NOME];
+    int nEquipa;
     int posição; // guarda a ultima posição da equipa
 };
 
@@ -123,16 +118,54 @@ int daEmJogoEquipa(equipa e)
 void alteraEmJogoEquipa(equipa e, int emJogo)
 {
     e->emJogo = emJogo;
+    if(emJogo==0)
+    {
+        removePosSequencia(e, e->nEquipa);
+        alteraNumEquipa(e);
+    }
 }
 
 
-int daNumElemsEquipa_emJogo(equipa_emJogo e_emJogo)
+void alteraNumEquipa(equipa e)
 {
-	return tamanhoDicionario(e_emJogo->arqueologos);
+    int i;
+    for(i=1; i<=tamanhoSequencia(e); i++)
+        e->numEquipa=i
 }
 
 
-arqueologo arqueologoComMaiorMerito(equipa_emJogo e_emJogo)
+int existeEquipa(equipa e, void *nome){
+	int i;
+	for (i = 1; i<=tamanhoSequencia(e);i++)
+		if (igualChaves(ch,priTuplo(d->elems[i]),d->tipoCh) == 1)
+			return i;
+	return -1;
+    
+    
+    if (posElemDicionario(d,ch) != -1)
+		return 1;
+	return 0;
+}
+
+
+int existPorNomeEquipa(equipa e, void *nome){
+	
+    if (daNEquipaPorNomeEquipa(equipa e, void *nome) != -1)
+		return 1;
+	return 0;
+}
+
+
+int daNEquipaPorNomeEquipa(equipa e, void *nome){
+	int i;
+	for (i = 1; i<=tamanhoSequencia(e);i++)
+		if (strcmp(nome, e->nome))
+			return i;
+	return -1;
+}
+
+
+arqueologo arqueologoComMaiorMerito(equipa e)
 {
     arqueologo maxArq = elementoPosSequencia(e->arqueologos, 1) ;
     int num = tamanhoSequencia(e->arqueologos);

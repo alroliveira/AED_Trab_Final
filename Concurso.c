@@ -49,11 +49,12 @@ concurso daEquipaDoConcurso(concurso c, int pos) // ONDE ESTA O PROTOTIPO DISTO?
 }
 
 
-void adicionarEquipaAoConcurso(concurso c, char *nome)// ONDE ESTA O PROTOTIPO DISTO?? ONDE E QUE ISTO ESTA USADO???
+void adicionarEquipaAoConcurso(concurso c, char *nome)// ONDE ESTA O PROTOTIPO DISTO?? ONDE E QUE ISTO ESTA USADO??? no lerequipas()
 {
     equipa e;
     int pos;
     e = criarArqueolog(nome);
     pos = tamanhoSequencia(c->equipas) + 1;
     adicionaPosSequencia(c->equipas, (void*) e, pos);
+    e->nEquipa = pos;
 }

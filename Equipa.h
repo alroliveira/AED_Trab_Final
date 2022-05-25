@@ -33,4 +33,8 @@ int daEmJogoEquipa(equipa e);
 
 void alteraEmJogoEquipa(equipa e, int emJogo);
 
+int existPorNomeEquipa(equipa e, void *nome);
+
+int daNEquipaPorNomeEquipa(equipa e, void *nome);
+
 #endif /* EQUIPA_H_ */

@@ -139,6 +139,7 @@ void lerEquipas(concurso c)
             fgets(line, sizeof(line), file);
             adicionarArqueologoAEquipa(e, line);
         }
+        nEquipa++;
     }
 }
 
@@ -173,18 +174,19 @@ void cmdTerreno(concurso c)
 void cmdEstrela(concurso c, char* nome_equipa)
 {
     int i;
-    equipa_emJogo e_emJogo;
+    equipa e, eq;
     arqueologo a;
 
-    if (existeElemDicionario(e_emJogo, nome_equipa))
+    if (!existPorNomeEquipa(e, nome_equipa))
     {
         printf("Equipa invalida\n");
         return;
     }
-    e_emJogo = elementoDicionario(dicionario d, void * ch);
-    a = arqueologoComMaiorMerito(e_emJogo);
-    printf("Estrela de %s: %s\n", e_emJogo->nome, a->nome);
+    eq = elementoPosSequencia(e, daNEquipaPorNomeEquipa(e, nome_equipa));
+    a = arqueologoComMaiorMerito(eq);
+    printf("Estrela de %s: %s\n", eq->nome, a->nome);
 }
+
 
 
 void cmdEquipa(concurso c, int i)
@@ -204,7 +206,6 @@ void cmdEquipa(concurso c, int i)
     else
     {
         nome = daNomeEquipa(e);
-        adicionaElemDicionario(e_emJogo, nome, elementoPosSequencia(e, i));
         alteraEmJogoEquipa(e, 1);
     }
 }
@@ -218,9 +219,10 @@ void cmdEscavação()
 
 void cmdSair (concurso c)       //.......(existemTesourosEnterrados()).......
 {
-    equipa_emJogo e_emJogo;
-
-    if(vazioDicionario(e_emJogo)){
+    //equipa_emJogo e_emJogo;
+    equipa e;
+    
+    if(tamanhoSequencia(e)==0){       //vazioDicionario(e_emJogo)
         printf("Todas as equipas foram expulsas.\n");
     }
     else{
