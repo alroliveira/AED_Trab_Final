@@ -17,9 +17,7 @@
 // constants
 #define MAXCMD 50
 #define MAXNOME 50
-        //perguntar se ha maximo para o campo
-#define MAXLINHA linha*2-1
-#define MAXCOLUNA coluna*2-1
+
 
 // Prototypes
 void lerTerreno(concurso con);
