@@ -94,7 +94,7 @@ void adicionarArqueologoAEquipa(equipa e, char *nome)
 {
     arqueologo a;
     int pos;
-    a = criarArqueolog(nome);
+    a = criarArqueologo(nome);
     pos = tamanhoSequencia(e->arqueologos) + 1;
     adicionaPosSequencia(e->arqueologos, (void*) a, pos);
 }
@@ -177,12 +177,12 @@ sequencia arqueologoComMaiorMerito(equipa e)
     {
         arqueologo a = elementoPosSequencia(e->arqueologos, i);
         if (calcularMeritoArqueologo(maxArq) == calcularMeritoArqueologo(a)){
-            if (maxArq->penalizacao == a->penalizacao){
-                if (strcmp(maxArq->nome, a->nome) < 0) {
+            if (daPenalizacaoArqueologo(maxArq) == daPenalizacaoArqueologo(a)){
+                if (strcmp(daNomeArqueologo(maxArq), daNomeArqueologo(a)) < 0) {
                     maxArq = a;
                 }
             }
-            else if (maxArq->penalizacao < a->penalizacao){
+            else if (daPenalizacaoArqueologo(maxArq) < daPenalizacaoArqueologo(a)){
                 maxArq = a;
             }
         }

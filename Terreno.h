@@ -8,6 +8,13 @@
 #include "Arqueologo.h"
 
 //TAD
+struct _terreno
+{
+    int linhas;
+    int colunas;
+    sequencia talhoes;
+};
+
 typedef struct _terreno * terreno;
 
 typedef struct _talhao * talhao;

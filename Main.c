@@ -10,8 +10,8 @@
 #include "iterador.h"
 #include "sequencia.h"
 #include "Concurso.h"
-#include "Terreno.h"
 #include "Equipa.h"
+#include "Terreno.h"
 #include "Talhoes.h"
 #include "Arqueologo.h"
 
@@ -23,7 +23,7 @@
 // Prototypes
 void lerTerreno(concurso con);
 void lerEquipas(concurso c);
-void interpretedor(concurso c);
+void interpretador(concurso c);
 void iniciarConcurso(concurso c);
     //Funçoes comando
     void cmdRiqueza(concurso c);
@@ -40,15 +40,16 @@ int main()
     concurso c;
 
     iniciarConcurso(c);
-    interpretedor(c);
+    interpretador(c);
     destroiConcursoTD(c);
+    getchar();
     return 0;
 }
 
 void iniciarConcurso(concurso c)
 {
     int linha, coluna; 
-    scanf("%d %d", linha, coluna);
+    scanf("%d %d", &linha, &coluna);
     c = criaConcurso(linha, coluna);
     lerEquipas(c);
 }
@@ -56,10 +57,12 @@ void iniciarConcurso(concurso c)
 
 void interpretador(concurso c) //(comandos a executar)//
 {
+    printf("interpretador\n");
     while (1)
     {
         char linha[MAXCMD];
         fgets(linha, sizeof(linha), stdin);
+        getc(stdin);
         linha[strlen(linha) - 1] = '\0';
         char *comando = strtok(linha, " ");
 
@@ -93,7 +96,7 @@ void interpretador(concurso c) //(comandos a executar)//
             cmdEscavacao(c,iLinha,iColuna,sNome);
         }
         else if (!strcmp(comando, "reforco")) {
-            cmdReforco(c);
+            //cmdReforco(c);
         }
         else if (!strcmp(comando, "equipa")) {
             char *num_equipa = strtok(NULL, " ");
@@ -239,7 +242,7 @@ void cmdEscavacao(concurso c, int lSalto, int cSalto, char *nome)
             
             if (!daEscavadoTalhao(t) && daValorTalhao(t)){
                 t->escavado = t->escavado + 1;
-                a->tesouros += daEscavadoTalhao(t);
+                incrementaTesouro(a, daEscavadoTalhao(t));
                 t->valor = 0;
             }
             else if (!daEscavadoTalhao(t)){

@@ -14,15 +14,6 @@
 #include "Talhoes.h"
 #include "Arqueologo.h"
 
-
-struct _terreno
-{
-    int linhas;
-    int colunas;
-    sequencia talhoes;
-};
-
-
 terreno criaTerreno(int l,int c)
 {
     terreno T;

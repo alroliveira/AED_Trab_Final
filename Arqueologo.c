@@ -26,7 +26,7 @@ struct _arqueologo
 };
  
 
-arqueologo criaArqueologo(char *nome)
+arqueologo criarArqueologo(char *nome)
 {
     arqueologo a;
     a = (arqueologo) malloc(sizeof(struct _arqueologo));
@@ -91,3 +91,12 @@ int daLCArqueologo(arqueologo a, terreno T, int controlo) //se controlo==1 da as
     else
         return c;
 }
+
+
+int daPenalizacaoArqueologo(arqueologo a){
+    return a->penalizacao;
+}
+
+void incrementaTesouro(arqueologo a, int valor) {
+                a->tesouros += valor;
+            }
