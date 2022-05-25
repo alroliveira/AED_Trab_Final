@@ -17,8 +17,6 @@ void destroiTalhao(talhao t);
 
 void destroiGenTalhoes(void * t);
 
-int daValorTalhao(terreno T);
-
-int daEscavadoTalho(concurso c);
+int valorTalhao(talhao t);
 
 #endif

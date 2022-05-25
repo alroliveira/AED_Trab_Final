@@ -17,6 +17,9 @@
 // constants
 #define MAXCMD 50
 #define MAXNOME 50
+        //perguntar se ha maximo para o campo
+#define MAXLINHA linha*2-1
+#define MAXCOLUNA coluna*2-1
 
 // Prototypes
 void lerTerreno(concurso con);
@@ -56,7 +59,7 @@ void interpretador(concurso c) //(comandos a executar)//
             cmdRiqueza(c);
         }
         else if (!strcmp(comando, "terreno")) {                     //
-            cmdTerreno();
+            cmdTerreno(c);
         }
         else if (!strcmp(comando, "estrela")) {
             char *nome_equipa = strtok(NULL, " ");
@@ -79,10 +82,10 @@ void interpretador(concurso c) //(comandos a executar)//
             int iColuna = atoi(sColuna);
             if (iLinha == 0 || iColuna == 0) continue;
 
-            cmdEscavacao();
+            cmdEscavacao(c,iLinha,iColuna);
         }
         else if (!strcmp(comando, "reforco")) {
-            cmdReforco();
+            cmdReforco(c);
         }
         else if (!strcmp(comando, "equipa")) {
             char *num_equipa = strtok(NULL, " ");
@@ -105,7 +108,7 @@ void interpretador(concurso c) //(comandos a executar)//
 
 void iniciarConcurso(concurso c)
 {
-    int linha, coluna;
+    int linha, coluna; 
     scanf("%d %d", linha, coluna);
     c = criarConcurso(linha, coluna);
     lerEquipas(c);
@@ -142,13 +145,28 @@ void lerEquipas(concurso c)
 
 void cmdRiqueza(concurso c)
 {
-//
+    int riqueza = 0;
+    terreno T;
+    riqueza = leValorTerreno(T);
+    printf("Riqueza enterrada: %d\n",riqueza);
 }
 
 
-void cmdTerreno(concurso c, int linha, int coluna)
+void cmdTerreno(concurso c)
 {
-//
+    terreno T;
+    int linha=daLinhaTerreno(T),coluna=daColunaTerreno(T);
+    char matriz[linha][coluna];
+    
+    matriz = char * criaMatriz(T,linha,coluna);
+    for(int i=0;i<linha;i++)
+    {
+        for(int j=0;j<coluna;j++)
+        {
+            printf("%c",matriz[i][j]);
+        }
+        printf("\n");
+    }
 }
 
 

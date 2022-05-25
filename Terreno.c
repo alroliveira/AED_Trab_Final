@@ -6,6 +6,7 @@
 #include <string.h>
 #include "Concurso.h"
 #include "Terreno.h"
+#include "iterador.h"
 #include "sequencia.h"
 
 
@@ -28,15 +29,45 @@ terreno criaTerreno(int l,int c)
     return T;
 }
 
+
 void destroiTerreno(terreno T)
 {
     free(T);
 }
 
+
 void destroiTerrenoTalhoes(terreno T)
 {
     estroiSeqElems(e->arqueologos, destroiGenTalhoes);
     free(T);
+}
+
+
+int leValorTerreno(terreno T)
+{
+    int riqueza=0;
+    talhao t;
+    iterador it = iteradorSequencia(T->talhoes);
+
+    while(temSeguinteIterador(it))
+    {
+        t = (talhao)seguinteIterador(it);
+        riqueza += daMeritoArqueologo(t);
+    }
+    destroiIterador(it);
+    return riqueza;
+}
+
+
+int daLinhaTerreno(terreno T)
+{
+    return T->linhas;
+}
+
+
+int daColunaTerreno(terreno T)
+{
+    return T->colunas;
 }
 
 

@@ -24,6 +24,7 @@ struct _equipa_emJogo
 {
     sequencia arqueologos;
     char nome[NOME];
+    int posição; // guarda a ultima posição da equipa
 };
 
 
@@ -51,15 +52,14 @@ equipa criaEquipa(char *nome)
 
 int calculaClassificacao (equipa e)
 {
-    int existe=0;
     int merito=0;
     arqueologo a;
     iterador it = iteradorSequencia(e->arqueologos);
 
-    while(temSeguinteIterador(it) && existe == 0)
+    while(temSeguinteIterador(it))
     {
         a = (arqueologo)seguinteIterador(it);
-        merito = merito + daMeritoArqueologo(a);
+        merito += daMeritoArqueologo(a);
     }
     destroiIterador(it);
     return merito;
