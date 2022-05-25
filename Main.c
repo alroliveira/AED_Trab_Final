@@ -210,7 +210,7 @@ void cmdEquipa(concurso c, int i)
 
 void cmdEscavação()
 {
-
+    
 }
 
 
