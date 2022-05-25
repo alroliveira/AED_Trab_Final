@@ -4,10 +4,14 @@
 
 #include <stdlib.h>
 #include <string.h>
-#include "Concurso.h"
-#include "Terreno.h"
 #include "iterador.h"
 #include "sequencia.h"
+#include "dicionario.h"
+#include "Concurso.h"
+#include "Terreno.h"
+#include "Equipa.h"
+#include "Arqueologo.h"
+#include "Talhoes.h"
 
 
 struct _terreno
