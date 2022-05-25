@@ -14,7 +14,7 @@ concurso criaConcurso(int l, int c);
 
 void destroiConcursoTD(concurso c);
 
-concurso daEquipaDoConcurso(concursoc, int pos);
+concurso daEquipaDoConcurso(concurso c, int pos);
 
 void adicionarEquipaAoConcurso(concurso c,char * nome);
 

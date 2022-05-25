@@ -18,10 +18,10 @@ struct _arqueologo
     int tesouros;
     int penalizacao;
     char nome[NOME];
-    int posição; // guarda a ultima posição do arqueologo
+    int posicao; // guarda a ultima posição do arqueologo
 };
  
-/*
+
 arqueologo criaArqueologo(char *nome)
 {
     arqueologo a;
@@ -35,7 +35,7 @@ arqueologo criaArqueologo(char *nome)
     strcpy(a->nome, nome);
     return a;
 }
-*/
+
 /*
 int calcularMeritoArqueologo(arqueologo a)
 {
@@ -66,7 +66,7 @@ void destroiGenArqueologo(void * a)
 
 int daPosArqueologo(arqueologo a)
 {
-    return a->posição;
+    return a->posicao;
 }
 
 int daLCArqueologo(arqueologo a, terreno T, int controlo) //se controlo==1 da as linhas, se controlo==0 da colunas   

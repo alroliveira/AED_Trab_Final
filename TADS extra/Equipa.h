@@ -32,7 +32,7 @@ int daEmJogoEquipa(equipa e);
 
 void alteraEmJogoEquipa(equipa e, int emJogo);
 
-void alteraNumEquipa(equipa e);
+void atualizaNumEquipa(equipa e);
 
 //int existeEquipa(equipa e, void *nome);
 
@@ -40,6 +40,8 @@ int existPorNomeEquipa(equipa e, void *nome);
 
 int daNEquipaPorNomeEquipa(equipa e, void *nome);
 
-arqueologo arqueologoComMaiorMerito(equipa e);
+sequencia arqueologoComMaiorMerito(equipa e);
+
+void alteraNumEquipa (equipa e, int num);
 
 #endif /* EQUIPA_H_ */

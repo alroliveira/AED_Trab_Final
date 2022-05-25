@@ -119,16 +119,16 @@ void alteraEmJogoEquipa(equipa e, int emJogo)
     if(emJogo==0)
     {
         removePosSequencia(e, e->nEquipa);
-        alteraNumEquipa(e);
+        atualizaNumEquipa(e);
     }
 }
 
 
-void alteraNumEquipa(equipa e)
+void atualizaNumEquipa(equipa e)
 {
     int i;
     for(i=1; i<=tamanhoSequencia(e); i++)
-        e->numEquipa=i
+        e->nEquipa=i;
 }
 
 /*
@@ -148,7 +148,7 @@ int existeEquipa(equipa e, void *nome){
 
 int existPorNomeEquipa(equipa e, void *nome){
 	
-    if (daNEquipaPorNomeEquipa(equipa e, void *nome) != -1)
+    if (daNEquipaPorNomeEquipa(e, nome) != -1)
 		return 1;
 	return 0;
 }
@@ -163,7 +163,7 @@ int daNEquipaPorNomeEquipa(equipa e, void *nome){
 } 
 
 
-arqueologo arqueologoComMaiorMerito(equipa e)
+sequencia arqueologoComMaiorMerito(equipa e)
 {
     arqueologo maxArq = elementoPosSequencia(e->arqueologos, 1) ;
     int num = tamanhoSequencia(e->arqueologos);
@@ -185,4 +185,9 @@ arqueologo arqueologoComMaiorMerito(equipa e)
             maxArq = a;
         }
     }
+}
+
+
+void alteraNumEquipa (equipa e, int num){
+    e->nEquipa=num;
 }

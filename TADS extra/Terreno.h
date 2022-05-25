@@ -17,7 +17,7 @@ terreno criaTerreno(int l,int c);
 
 void destroiTerreno(terreno T);
 
-//void destroiTerrenoTalhoes(terreno T);
+void destroiTerrenoTalhoes(terreno T);
 
 int leValorTerreno(terreno T);
 

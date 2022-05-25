@@ -26,7 +26,7 @@ concurso criaConcurso(int l,int c)
 {
     concurso o;
     o = (concurso) malloc(sizeof(concurso));
-    if(c == NULL)
+    if(o == NULL)
         return NULL;
     o->campo_de_jogo = criaTerreno(l,c);
     o->equipas =criaEquipa();
@@ -36,7 +36,7 @@ concurso criaConcurso(int l,int c)
 
 void destroiConcursoTD(concurso c) //tem de ser editado n destroi terreno
  {
-    destroiTerrenoECampoDeJogo();                                   //.....................................
+    destroiTerrenoTalhoes(c->terreno);                                   //.....................................
     destroiSeqElems(c->equipas, destroiGenArqueologo);
     free(c);
  }
@@ -52,9 +52,9 @@ void adicionarEquipaAoConcurso(concurso c, char *nome)// ONDE ESTA O PROTOTIPO D
 {
     equipa e;
     int pos;
-    e = criarArqueolog(nome);
+    e = criaArqueologo(nome);
     pos = tamanhoSequencia(c->equipas) + 1;
     adicionaPosSequencia(c->equipas, (void*) e, pos);
-    e->nEquipa = pos;
+    void alteraNumEquipa (e, pos)
 }
 

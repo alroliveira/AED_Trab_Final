@@ -39,13 +39,13 @@ void destroiTerreno(terreno T)
     free(T);
 }
 
-/*
+
 void destroiTerrenoTalhoes(terreno T)
 {
     estroiSeqElems(e->arqueologos, destroiGenTalhoes);
     free(T);
 }
-*/
+
 
 int leValorTerreno(terreno T)
 {
@@ -78,7 +78,8 @@ int daColunaTerreno(terreno T)
 int existemTesourosEnterrados(terreno T)
 {
     talhao t;
-    iterador it = iteradorSequencia(T->talhao);
+    iterador it = iteradorSequencia(T->talhoes);
+    int existe = 0;
 
     while(temSeguinteIterador(it) && existe == 0)
     {
@@ -92,7 +93,7 @@ int existemTesourosEnterrados(terreno T)
 
 char * criaMatriz(terreno T,int l,int c)
 {
-    char m[l][c]
+    char m[l][c];
     for (int i = 0; i < l; i++)
     {
         for (int j = 0; j < c; j++)
@@ -111,10 +112,8 @@ char * criaMatriz(terreno T,int l,int c)
     //pos onde ta + o salto
 int daLCSalto(equipa e, int Linha, int Coluna, terreno T, int controlo) //se controlo==1 da as linhas, se controlo==0 da colunas   
 {
-    int pos, lA, cA, lT, cT;
+    int lA, cA;
     int lFinal, cFinal;
-    lT= daLinhaTerreno(T);
-    cT=daColunaTerreno(T);
     lA = daLCArqueologo(e->arqueologo, T, 1);
     cA = daLCArqueologo(e->arqueologo, T, 0);
     

@@ -26,10 +26,10 @@ void interpretedor(concurso c);
 void iniciarConcurso(concurso c);
     //Funçoes comando
     void cmdRiqueza(concurso c);
-    void cmdTerreno(concurso c, int linha, int coluna);
+    void cmdTerreno(concurso c);
     void cmdEstrela(concurso c, char* nome_equipa);
     void cmdEqipa(concurso c, int i);
-    void cmdEscavação();
+    void cmdEscavacao(concurso c, int lSalto, int cSalto, char *nome);
     void cmdSair(concurso c);
 
 
@@ -137,7 +137,6 @@ void lerEquipas(concurso c)
             fgets(line, sizeof(line), file);
             adicionarArqueologoAEquipa(e, line);
         }
-        nEquipa++;
     }
 } 
 
@@ -171,7 +170,6 @@ void cmdTerreno(concurso c)
 
 void cmdEstrela(concurso c, char* nome_equipa)
 {
-    int i;
     equipa e, eq;
     arqueologo a;
 
@@ -189,7 +187,6 @@ void cmdEstrela(concurso c, char* nome_equipa)
 void cmdEquipa(concurso c, int i)
 {
     equipa e;
-    equipa_emJogo e_emJogo;
     char *nome;
    
     if (tamanhoSequencia(e) < i)
@@ -208,7 +205,7 @@ void cmdEquipa(concurso c, int i)
 }
 
 
-void cmdEscavacao(concurso c, int lSalto, int cSalto, char nome)
+void cmdEscavacao(concurso c, int lSalto, int cSalto, char *nome)
 {
     equipa e;
     terreno T;
@@ -217,7 +214,7 @@ void cmdEscavacao(concurso c, int lSalto, int cSalto, char nome)
     arqueologo a; 
     iterador it;
     
-    if (iLinha==0 || iColuna==0){
+    if (lSalto==0 || cSalto==0){
         printf("Salto invalido\n");
     }
     else if (daNEquipaPorNomeEquipa(e, nome)==-1){
