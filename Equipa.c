@@ -161,7 +161,7 @@ int daNEquipaPorNomeEquipa(equipa e, void *nome){
 		if (strcmp(nome, e->nome))
 			return i;
 	return -1;
-}
+} 
 
 
 arqueologo arqueologoComMaiorMerito(equipa e)

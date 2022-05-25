@@ -108,7 +108,7 @@ char * criaMatriz(terreno T,int l,int c)
 }
 
 /*  precisamos de uma funcao assim (pelo menos para o main)
- *
+ * 
  *  void existemTesourosEnterrados()
  *  void destroiTerrenoECampoDeJogo()
  */

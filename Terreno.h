@@ -11,7 +11,7 @@ typedef struct _terreno * terreno;
 typedef struct _talhao * talhao;
 
 
-//Funções
+//Funções 
 
 terreno criaTerreno(int l,int c);
 

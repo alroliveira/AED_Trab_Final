@@ -10,7 +10,7 @@ typedef struct _arqueologo * arqueologo;
 
 /* Prototipos das funcoes associadas ao Arqueologo */
 
-arqueologo criaArqueologo(char *nome);
+arqueologo criaArqueologo(char *nome); 
 
 int calcularMeritoArqueologo(arqueologo a);
 

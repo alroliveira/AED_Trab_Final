@@ -19,7 +19,7 @@ struct _arqueologo
     char nome[NOME];
     int posição; // guarda a ultima posição do arqueologo
 };
-
+ 
 
 arqueologo criaArqueologo(char *nome)
 {

@@ -34,7 +34,7 @@ void destroiSequencia (sequencia s ){
 
 
 void destroiSeqElems(sequencia s, void (*destroi)(void *) ){
-	int i;
+	int i; 
 
     for (i=0; i<s->numElems; i++)
         destroi(s->elems[i]);

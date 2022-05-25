@@ -7,7 +7,7 @@
 
 // TAD
 typedef struct _concurso * concurso;
-
+ 
 //Funções
 
 concurso criaConcurso();

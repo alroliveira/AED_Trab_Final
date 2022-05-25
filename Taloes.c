@@ -51,5 +51,5 @@ int daEscavadoTalhao(talhao t)
 {
     if (t->escavado!=0)
         return 1;
-    return 0;
+    return 0; 
 }

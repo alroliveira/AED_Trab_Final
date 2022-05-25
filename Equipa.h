@@ -6,7 +6,7 @@
 #define _H_EQUIPA
 
 /* Tipo de dados: Equipa */
-typedef struct _equipa * equipa;
+typedef struct _equipa * equipa; 
 typedef struct _equipa_emJogo * equipa_emJogo;
 
 /* Prototipos das funcoes associadas a Equipa */

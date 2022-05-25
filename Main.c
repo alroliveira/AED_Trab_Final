@@ -140,7 +140,7 @@ void lerEquipas(concurso c)
         }
         nEquipa++;
     }
-}
+} 
 
 
 void cmdRiqueza(concurso c)
