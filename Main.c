@@ -186,7 +186,6 @@ void cmdEstrela(concurso c, char* nome_equipa)
 }
 
 
-
 void cmdEquipa(concurso c, int i)
 {
     equipa e;
@@ -219,12 +218,13 @@ void cmdSair (concurso c)       //.......(existemTesourosEnterrados()).......
 {
     //equipa_emJogo e_emJogo;
     equipa e;
+    terreno T;
     
-    if(tamanhoSequencia(e)==0){       //vazioDicionario(e_emJogo)
+    if(tamanhoSequencia(e)==0){
         printf("Todas as equipas foram expulsas.\n");
     }
     else{
-        if(existemTesourosEnterrados()){                            //.........................................
+        if(existemTesourosEnterrados(T)){                            //.........................................
             printf("Ainda havia tesouros por descobrir...\n");
         }
         else{
