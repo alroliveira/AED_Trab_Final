@@ -49,5 +49,7 @@ int valorTalhao(talhao t)
 
 int daEscavadoTalhao(talhao t)
 {
-    return t->escavado
+    if (t->escavado!=0)
+        return 1;
+    return 0;
 }
