@@ -16,7 +16,7 @@
 struct _concurso
 {
     terreno campo_de_jogo;
-    equipa equipas;
+    sequencia equipas;
 };
 
 

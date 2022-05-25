@@ -28,7 +28,7 @@ void iniciarConcurso(concurso c);
     void cmdRiqueza(concurso c);
     void cmdTerreno(concurso c);
     void cmdEstrela(concurso c, char* nome_equipa);
-    void cmdEqipa(concurso c, int i);
+    void cmdEquipa(concurso c, int i);
     void cmdEscavacao(concurso c, int lSalto, int cSalto, char *nome);
     void cmdSair(concurso c);
 
