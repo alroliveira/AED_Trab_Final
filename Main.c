@@ -12,6 +12,7 @@
 #include "Terreno.h"
 #include "Equipa.h"
 #include "Arqueologo.h"
+#include "Talhoes.h"
 
 // constants
 #define MAXCMD 50
@@ -208,6 +209,7 @@ void cmdEscavacao(concurso c, int lSalto, int cSalto, char *nome)
 {
     equipa e;
     terreno T;
+    talhao t;
     int lFinal, cFinal;
     int i;
     arqueologo a; 
@@ -228,6 +230,10 @@ void cmdEscavacao(concurso c, int lSalto, int cSalto, char *nome)
                 printf("%s foi expulsa\n", nome);
                 return;
             }
+        }
+        t = elementoPosSequencia(t,lFinal * cFinal); 
+        if(daEscavadoTalhao(t)<0){
+            
         }
         it = iterador iteradorEquipa(e);
         while(temSeguinteIterador(it))

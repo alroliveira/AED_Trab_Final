@@ -55,7 +55,7 @@ int leValorTerreno(terreno T)
     while(temSeguinteIterador(it))
     {
         t = (talhao)seguinteIterador(it);
-        riqueza += daMeritoArqueologo(t);
+        riqueza += valorTalhao(t);
     }
     destroiIterador(it);
     return riqueza;
