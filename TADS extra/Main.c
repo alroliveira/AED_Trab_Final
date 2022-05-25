@@ -240,9 +240,8 @@ void cmdEscavacao(concurso c, int lSalto, int cSalto, char *nome)
 }
 
 
-void cmdSair (concurso c)       //.......(existemTesourosEnterrados()).......
+void cmdSair (concurso c)     
 {
-    //equipa_emJogo e_emJogo;
     equipa e;
     terreno T;
     
@@ -250,7 +249,7 @@ void cmdSair (concurso c)       //.......(existemTesourosEnterrados()).......
         printf("Todas as equipas foram expulsas.\n");
     }
     else{
-        if(existemTesourosEnterrados(T)){                            //.........................................
+        if(existemTesourosEnterrados(T)){                          
             printf("Ainda havia tesouros por descobrir...\n");
         }
         else{
