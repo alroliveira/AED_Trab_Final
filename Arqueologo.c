@@ -20,7 +20,7 @@ struct _arqueologo
     int posição; // guarda a ultima posição do arqueologo
 };
  
-
+/*
 arqueologo criaArqueologo(char *nome)
 {
     arqueologo a;
@@ -34,8 +34,8 @@ arqueologo criaArqueologo(char *nome)
     strcpy(a->nome, nome);
     return a;
 }
-
-
+*/
+/*
 int calcularMeritoArqueologo(arqueologo a)
 {
     int merito = 0;
@@ -43,13 +43,13 @@ int calcularMeritoArqueologo(arqueologo a)
     merito = a->tesouros - a->penalizacao;
     return merito;
 }
-
-
+*/
+/*
 char *daNomeArqueologo(arqueologo a)
 {
     return a->nome;
 }
-
+*/
 
 void destroiArqueologo(arqueologo a)
 {

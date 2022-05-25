@@ -44,6 +44,14 @@ int main()
     return 0;
 }
 
+void iniciarConcurso(concurso c)
+{
+    int linha, coluna; 
+    scanf("%d %d", linha, coluna);
+    c = criaConcurso(linha, coluna);
+    lerEquipas(c);
+}
+
 
 void interpretador(concurso c) //(comandos a executar)//
 {
@@ -102,15 +110,6 @@ void interpretador(concurso c) //(comandos a executar)//
         else printf("Comando invalido\n");
     }
     cmdSair(c);                    //   *sem a classificacao das equipas ao sair
-}
-
-
-void iniciarConcurso(concurso c)
-{
-    int linha, coluna; 
-    scanf("%d %d", linha, coluna);
-    c = criarConcurso(linha, coluna);
-    lerEquipas(c);
 }
 
 
@@ -209,7 +208,7 @@ void cmdEquipa(concurso c, int i)
 }
 
 
-void cmdEscavação(concurso c, int iLinha, int iColuna, char sNome)
+void cmdEscavacao(concurso c, int iLinha, int iColuna, char sNome)
 {
     equipa e;
     Terreno T;

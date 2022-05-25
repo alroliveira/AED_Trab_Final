@@ -39,13 +39,13 @@ void destroiTerreno(terreno T)
     free(T);
 }
 
-
+/*
 void destroiTerrenoTalhoes(terreno T)
 {
     estroiSeqElems(e->arqueologos, destroiGenTalhoes);
     free(T);
 }
-
+*/
 
 int leValorTerreno(terreno T)
 {

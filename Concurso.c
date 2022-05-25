@@ -38,16 +38,15 @@ void destroiConcursoTD(concurso c) //tem de ser editado n destroi terreno
  {
     destroiTerrenoECampoDeJogo();                                   //.....................................
     destroiSeqElems(c->equipas, destroiGenArqueologo);
-    destroiDicEElems(c->equipas_emJogo, destroiGenArqueologo);
     free(c);
  }
 
-
+/*
 concurso daEquipaDoConcurso(concurso c, int pos) // ONDE ESTA O PROTOTIPO DISTO?? ONDE E QUE ISTO ESTA USADO???
 {
     return elementoPosSequencia(c->equipas, pos);
 }
-
+*/
 
 void adicionarEquipaAoConcurso(concurso c, char *nome)// ONDE ESTA O PROTOTIPO DISTO?? ONDE E QUE ISTO ESTA USADO??? no lerequipas()
 {

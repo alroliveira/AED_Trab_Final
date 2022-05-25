@@ -10,7 +10,7 @@ typedef struct _concurso * concurso;
  
 //Funções
 
-concurso criaConcurso();
+concurso criaConcurso(int l, int c);
 
 void destroiConcursoTD(concurso c);
 

@@ -22,7 +22,7 @@ struct _equipa
 };
 
 
-equipa criaEquipa(char *nome)
+equipa criaEquipa()
 {
     equipa e;
 
@@ -38,12 +38,11 @@ equipa criaEquipa(char *nome)
         free(e);
         return NULL;
     }
-    strcpy(e->nome, nome);
     e->emJogo = 0;
     return e;
 }
 
-
+/*
 int calculaClassificacao (equipa e)
 {
     int merito=0;
@@ -58,33 +57,33 @@ int calculaClassificacao (equipa e)
     destroiIterador(it);
     return merito;
 }
-
-
+*/
+/*
 void destroiEquipa(equipa e)
 {
     destroiSequencia(e->arqueologos);
     free(e);
 }
-
-
+*/
+/*
 void destroiGenEquipa(void * e)
 {
     destroiEquipa((equipa)e);
 }
-
-
+*/
+/*
 void destroiEquipaEArqueologo(equipa e)
 {
     destroiSeqElems(e->arqueologos, destroiGenArqueologo);
     free(e);
 }
-
-
+*/
+/*
 equipa daArqueologoDaEquipa(equipa e, int pos)
 {
     return elementoPosSequencia(e->arqueologos, pos);
 }
-
+*/
 
 void adicionarArqueologoAEquipa(equipa e, char *nome)
 {
@@ -95,12 +94,12 @@ void adicionarArqueologoAEquipa(equipa e, char *nome)
     adicionaPosSequencia(e->arqueologos, (void*) a, pos);
 }
 
-
+/*
 iterador iteradorEquipa(equipa e)
 {
     return iteradorSequencia(e->arqueologos);
 }
-
+*/
 
 char *daNomeEquipa(equipa e)
 {
@@ -132,7 +131,7 @@ void alteraNumEquipa(equipa e)
         e->numEquipa=i
 }
 
-
+/*
 int existeEquipa(equipa e, void *nome){
 	int i;
 	for (i = 1; i<=tamanhoSequencia(e);i++)
@@ -145,7 +144,7 @@ int existeEquipa(equipa e, void *nome){
 		return 1;
 	return 0;
 }
-
+*/
 
 int existPorNomeEquipa(equipa e, void *nome){
 	
