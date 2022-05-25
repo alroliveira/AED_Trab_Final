@@ -41,6 +41,7 @@ int main()
     iniciarConcurso(c);
     interpretedor(c);
     destroiConcursoTD(c);
+    return 0;
 }
 
 
@@ -80,7 +81,7 @@ void interpretador(concurso c) //(comandos a executar)//
             int iColuna = atoi(sColuna);
             if (iLinha == 0 || iColuna == 0) continue;
 
-            cmdEscavacao(c,iLinha,iColuna);
+            cmdEscavacao(c,iLinha,iColuna,sNome);
         }
         else if (!strcmp(comando, "reforco")) {
             cmdReforco(c);
@@ -208,9 +209,21 @@ void cmdEquipa(concurso c, int i)
 }
 
 
-void cmdEscavação()
+void cmdEscavação(concurso c, int iLinha, int iColuna, char sNome)
 {
+    equipa e;
+    Terreno T;
 
+    if (iLinha==0 || iColuna==0){
+        printf("Salto invalido\n");
+    }
+    else if (daNEquipaPorNomeEquipa(e, nome)==-1){
+        printf("Equipa invalida\n");
+    }
+    else{
+        daLFinal(e, iLinha, T);
+        daCFinal(e, iColuna, T);
+    }
 }
 
 

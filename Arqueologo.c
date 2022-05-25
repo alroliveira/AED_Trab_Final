@@ -17,6 +17,7 @@ struct _arqueologo
     int tesouros;
     int penalizacao;
     char nome[NOME];
+    int posição; // guarda a ultima posição do arqueologo
 };
 
 
@@ -59,4 +60,10 @@ void destroiArqueologo(arqueologo a)
 void destroiGenArqueologo(void * a)
 {
     destroiArqueologo((arqueologo)a);
+}
+
+
+int daPosArqueologo(arqueologo a)
+{
+    return a->posição;
 }

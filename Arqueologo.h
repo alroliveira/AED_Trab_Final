@@ -20,4 +20,5 @@ void destroiArqueologo(arqueologo a);
 
 void destroiGenArqueologo(void * a);
 
+int daPosArqueologo(arqueologo a);
 #endif /* ARQUEOLOGO_H_ */

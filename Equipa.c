@@ -19,7 +19,6 @@ struct _equipa
     char nome[NOME];
     int emJogo;                 //0 - se nunca teve em jogo     //1 - se ta em jogo ou ja teve e foi desqualificada
     int nEquipa;
-    int posição; // guarda a ultima posição da equipa
 };
 
 
