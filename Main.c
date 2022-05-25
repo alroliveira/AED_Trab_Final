@@ -3,16 +3,17 @@
 \********************************************************************/
 #include <stdio.h>
 #include <ctype.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
 // TADs
+#include "iterador.h"
 #include "sequencia.h"
 #include "Concurso.h"
 #include "Terreno.h"
 #include "Equipa.h"
-#include "Arqueologo.h"
 #include "Talhoes.h"
+#include "Arqueologo.h"
 
 // constants
 #define MAXCMD 50
@@ -222,8 +223,7 @@ void cmdEscavacao(concurso c, int lSalto, int cSalto, char *nome)
         printf("Equipa invalida\n");
     }
     else{
-        lFinal = daLCSalto(e, lSalto, cSalto, T, 1);
-        cFinal = daLCSalto(e, lSalto, cSalto, T, 0);
+««
         if(lFinal>daLinhaTerreno(T) || cFinal>daColunaTerreno(T)){
             destroiArqueologo(e->arqueologo);
             if(vaziaSequencia(e)){
