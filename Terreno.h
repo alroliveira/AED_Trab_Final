@@ -25,6 +25,8 @@ int daLinhaTerreno(terreno T);
 
 int daColunaTerreno(terreno T);
 
-char * criaMatriz(terreno T);
+int existemTesourosEnterrados(terreno T);
+
+char * criaMatriz(terreno T,int l, int c);
 
 #endif

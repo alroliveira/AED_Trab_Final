@@ -90,6 +90,23 @@ int existemTesourosEnterrados(terreno T)
     return existe;
 }
 
+char * criaMatriz(terreno T,int l,int c)
+{
+    char m[l][c]
+    for (int i = 0; i < l; i++)
+    {
+        for (int j = 0; j < c; j++)
+        {
+            if(daEscavadoTalhao(T->talhoes)==0)
+                m[i][j] = '-';
+            else
+                m[i][j] = '*';
+        }
+        
+    }
+    return m;
+}
+
 /*  precisamos de uma funcao assim (pelo menos para o main)
  *
  *  void existemTesourosEnterrados()
