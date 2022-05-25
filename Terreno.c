@@ -85,14 +85,14 @@ int existemTesourosEnterrados(terreno T)
     while(temSeguinteIterador(it) && existe == 0)
     {
         t = (talhao)seguinteIterador(it);
-        if(strcmp(mat, daEscavadoTalhao(t))==0)
+        if(daValorTalhao(t)==0)
             existe = 1;
     }
     destroiIterador(it);
     return existe;
 }
 
-char * criaMatriz(terreno T,int l,int c)
+char ** criaMatriz(terreno T,int l,int c)
 {
     char m[l][c];
     for (int i = 0; i < l; i++)

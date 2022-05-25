@@ -5,9 +5,14 @@
 #ifndef talhoes_h
 #define talhoes_h
 
-
 //TAD
-typedef struct _talhao * talhao;
+typedef struct _talhao
+{
+    int valor;
+    int escavado;
+} *talhao;
+
+typedef struct _talhao * talhao; 
 
 //funçoes
 

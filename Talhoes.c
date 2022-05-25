@@ -1,7 +1,6 @@
 /*
  * Concurso.c
  */
-
 #include <stdlib.h>
 #include <string.h>
 
@@ -13,13 +12,6 @@
 #include "Equipa.h"
 #include "Talhoes.h"
 #include "Arqueologo.h"
-
-struct _talhao
-{
-    int valor;
-    int escavado;
-};
-
 
 talhao criaTalhao(int l,int c)
 {

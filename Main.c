@@ -155,9 +155,7 @@ void cmdTerreno(concurso c)
 {
     terreno T;
     int linha=daLinhaTerreno(T),coluna=daColunaTerreno(T);
-    char matriz[linha][coluna];
-    
-    matriz = char * criaMatriz(T,linha,coluna);
+    char** matriz = criaMatriz(T,linha,coluna);
     for(int i=0;i<linha;i++)
     {
         for(int j=0;j<coluna;j++)
@@ -249,6 +247,7 @@ void cmdEscavacao(concurso c, int lSalto, int cSalto, char *nome)
             }
             else{
                 t->escavado += 1;
+                
             }
         }
         
