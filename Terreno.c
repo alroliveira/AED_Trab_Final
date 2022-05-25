@@ -4,10 +4,14 @@
 
 #include <stdlib.h>
 #include <string.h>
-#include "Concurso.h"
-#include "Terreno.h"
 #include "iterador.h"
 #include "sequencia.h"
+#include "dicionario.h"
+#include "Concurso.h"
+#include "Terreno.h"
+#include "Equipa.h"
+#include "Arqueologo.h"
+#include "Talhoes.h"
 
 
 struct _terreno
@@ -68,6 +72,23 @@ int daLinhaTerreno(terreno T)
 int daColunaTerreno(terreno T)
 {
     return T->colunas;
+}
+
+
+char * criaMatriz(terreno T,int l,int c)
+{
+    char m[l][c];
+    for(int i=0;i<l;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+            if(daEscavadoTalhao(T->talhoes) == 1)
+                m[i][j] = '*'
+            else
+                m[i][j] = '-'
+        }
+    }
+    return m;
 }
 
 
