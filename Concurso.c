@@ -4,12 +4,15 @@
 
 #include <stdlib.h>
 #include <string.h>
+
+// TADs
 #include "iterador.h"
 #include "sequencia.h"
 #include "Concurso.h"
 #include "Terreno.h"
 #include "Equipa.h"
-#include "Arqueologo.h" 
+#include "Talhoes.h"
+#include "Arqueologo.h"
 
 #define MAX_E 2000
 

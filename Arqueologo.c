@@ -4,11 +4,15 @@
 
 #include <stdlib.h>
 #include <string.h>
-#include "Iterador.h"
-#include "Sequencia.h"
-#include "Equipa.h"
-#include "Arqueologo.h"
+
+// TADs
+#include "iterador.h"
+#include "sequencia.h"
+#include "Concurso.h"
 #include "Terreno.h"
+#include "Equipa.h"
+#include "Talhoes.h"
+#include "Arqueologo.h"
 
 #define NOME 50
 
