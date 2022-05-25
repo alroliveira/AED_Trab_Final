@@ -71,6 +71,21 @@ int daColunaTerreno(terreno T)
 }
 
 
+int existemTesourosEnterrados(terreno T)
+{
+    talhao t;
+    iterador it = iteradorSequencia(T->talhao);
+
+    while(temSeguinteIterador(it) && existe == 0)
+    {
+        t = (talhao)seguinteIterador(it);
+        if(strcmp(mat, matriculaTicket(t))==0)
+            existe = 1;
+    }
+    destroiIterador(it);
+    return existe;
+}
+
 /*  precisamos de uma funcao assim (pelo menos para o main)
  *
  *  void existemTesourosEnterrados()
