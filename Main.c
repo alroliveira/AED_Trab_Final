@@ -212,7 +212,6 @@ void cmdEscavacao(concurso c, int lSalto, int cSalto, char *nome)
     terreno T;
     talhao t;
     int lFinal, cFinal;
-    int i;
     arqueologo a; 
     iterador it;
     
@@ -262,7 +261,7 @@ void cmdEscavacao(concurso c, int lSalto, int cSalto, char *nome)
 }
 
 
-void cmdSair (concurso c)     
+void cmdSair (concurso c)      //tem um problema do comando sair
 {
     equipa e;
     terreno T;

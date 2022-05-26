@@ -83,7 +83,7 @@ int existemTesourosEnterrados(terreno T)
     return existe;
 }
 
-char ** criaMatriz(terreno T,int l,int c)
+char * criaMatriz(terreno T,int l,int c)
 {
     char m[l][c];
     for (int i = 0; i < l; i++)
