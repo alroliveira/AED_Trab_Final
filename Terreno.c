@@ -21,7 +21,7 @@ terreno criaTerreno(int l,int c)
     terreno T;
     T = (terreno) malloc(sizeof(terreno));
     if(T==NULL) return NULL;
-    T->talhoes = (sequencia)criaTalhao(l,c);
+    T->talhoes = (sequencia)criaTalhao(l*c);
     T->colunas = c;
     T->linhas = l;
     return T;

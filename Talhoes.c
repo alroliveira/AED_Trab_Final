@@ -13,7 +13,7 @@
 #include "Talhoes.h"
 #include "Arqueologo.h"
 
-typedef struct _talhao
+struct _talhao
 {
     int valor;
     int escavado;
