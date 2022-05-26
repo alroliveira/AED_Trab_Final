@@ -1,8 +1,8 @@
 make.exe --dry-run --always-make --keep-going --print-directory
 make.exe: Entering directory `c:/Users/rodri/AED_Trab_Final'
 gcc -I. -Wall   -c -o Arqueologo.o Arqueologo.c
- 
 gcc -I. -Wall   -c -o Concurso.o Concurso.c
+ 
 gcc -I. -Wall   -c -o Equipa.o Equipa.c
  
 gcc -I. -Wall   -c -o iterador.o iterador.c
@@ -10,6 +10,7 @@ gcc -I. -Wall   -c -o Main.o Main.c
  
 gcc -I. -Wall   -c -o sequencia.o sequencia.c
 gcc -I. -Wall   -c -o Talhoes.o Talhoes.c
+ 
 gcc -I. -Wall   -c -o Terreno.o Terreno.c
 gcc -o main Arqueologo.o Concurso.o Equipa.o iterador.o Main.o sequencia.o Talhoes.o Terreno.o -I. -Wall -lm  && del Arqueologo.o Concurso.o Equipa.o iterador.o Main.o sequencia.o Talhoes.o Terreno.o
 make.exe: Leaving directory `c:/Users/rodri/AED_Trab_Final'
