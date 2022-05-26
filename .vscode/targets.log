@@ -8,7 +8,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # This program built for i386-pc-mingw32
  
 
-# Make data base, printed on Thu May 26 13:11:10 2022
+# Make data base, printed on Thu May 26 14:33:21 2022
 
 # Variables
 
@@ -62,7 +62,7 @@ PROGRAMW6432 = C:\Program Files
 # environment
 PROGRAMDATA = C:\ProgramData
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-d9ab8f62-c937-4647-b4ef-d0dd789388b3-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-9a3a05e4-b0ba-4f93-b13d-050adc56152f-sock
 # environment
 VSCODE_CWD = C:\My Programs\Microsoft VS Code
 # environment
@@ -88,7 +88,7 @@ LDFLAGS = -lm
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_14028_QSHQKTPFGIVJVFSX
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_25280_MQZYDHWGEZGZBMKV
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -113,8 +113,7 @@ APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
 # environment
 LOGONSERVER = \\LAPTOP-DK1QM374
-# environ 
-ment
+# environment
 ONEDRIVECONSUMER = C:\Users\rodri\OneDrive
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
@@ -155,7 +154,8 @@ VSCODE_IPC_HOOK = \\.\pipe\e72c50099abccae9eb90b55e4b0378e4-1.67.2-main-sock
 # environment
 HOMEPATH = \Users\rodri
 # environment
-COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
+COMMONPROGRAMFILES(X86) = C:\P 
+rogram Files (x86)\Common Files
 # environment
 PROMPT = $P$G
 # environment
@@ -181,8 +181,7 @@ MAKEFILES :=
 # environment
 LC_ALL = C
 # automatic
-^F = $(notdir  
-$^)
+^F = $(notdir $^)
 # default
 SUFFIXES := 
 # environment
@@ -202,7 +201,7 @@ PROCESSOR_LEVEL = 23
 # environment
 FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
-VSCODE_PID = 14028
+VSCODE_PID = 25280
 # environment
 USERDOMAIN_ROAMINGPROFILE = LAPTOP-DK1QM374
 # variable set hash-table stats:
@@ -217,18 +216,18 @@ USERDOMAIN_ROAMINGPROFILE = LAPTOP-DK1QM374
 # C:\My Programs\Microsoft VS Code\bin (key C:/My Programs/Microsoft VS Code/bin, mtime 1652965438): 4 files, no impossibilities.
 # C:\WINDOWS\System32\WindowsPowerShell\v1.0\ (key C:/WINDOWS/System32/WindowsPowerShell/v1.0/, mtime 1622916987): 30 files, no impossibilities.
 # C:\WINDOWS\System32\Wbem (key C:/WINDOWS/System32/Wbem, mtime 1652702562): 155 files, no impossibilities.
-# . (key c:/Users/rodri/AED_Trab_Final, mtime 1653557946): 23 files, no impossibilities.
+# . (key c:/Users/rodri/A 
+ED_Trab_Final, mtime 1653571625): 25 files, no impossibilities.
 # C:\Users\rodri\AppData\Local\Microsoft\WindowsApps (key C:/Users/rodri/AppData/Local/Microsoft/WindowsApps, mtime 1653478319): 28 files, no impossibilities.
 # C:\My Programs\Git\cmd (key C:/My Programs/Git/cmd, mtime 1653223549): 8 files, no impossibilities.
 # C:\WINDOWS\System32\OpenSSH\: could not be stat'd.
-# C:\Program Files (x86)\Common Files\Oracle\Java\javapath (key C:/Program Files (x86)/Common Files/Oracle/Java/javapath, mtime 163514 
-8476): 5 files, no impossibilities.
+# C:\Program Files (x86)\Common Files\Oracle\Java\javapath (key C:/Program Files (x86)/Common Files/Oracle/Java/javapath, mtime 1635148476): 5 files, no impossibilities.
 # C:\WINDOWS (key C:/WINDOWS, mtime 1652702679): 112 files, no impossibilities.
 # C:\My Programs\VMWare\bin\: could not be stat'd.
 # C:\My Programs\CodeBlocks\MinGW\bin (key C:/My Programs/CodeBlocks/MinGW/bin, mtime 1646773705): 61 files, no impossibilities.
 # C:\WINDOWS\system32 (key C:/WINDOWS/system32, mtime 1653323541): 2999 files, no impossibilities.
 
-# 3425 files, no impossibilities in 12 directories.
+# 3427 files, no impossibilities in 12 directories.
 
 # Implicit Rules
 
@@ -258,7 +257,8 @@ Terreno.o:
 
 # Not a target:
 .DEFAULT:
-#  Implicit rule search has not been done.
+#  Implicit rule search 
+ has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -279,8 +279,7 @@ Concurso.o:
 
 # Not a target:
 .SUFFIXES:
-#  Implicit rule search has n 
-ot been done.
+#  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -341,7 +340,10 @@ Main.o:
 
 # Not a target:
 iterador.o:
-#  Implicit rule search has not been done.
+#  Implicit rule search ha 
+make.exe: *** No rule to make target `all'.  Stop.
+
+s not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -358,8 +360,6 @@ iterador.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu May 26 13:11:10 2022
+# Finished Make data base on Thu May 26 14:33:21 2022
 
  
-make.exe: *** No rule to make target `all'.  Stop.
-
