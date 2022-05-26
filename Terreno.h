@@ -11,12 +11,6 @@
 #define MAXCOLUNA 10000
 
 //TAD
-struct _terreno
-{
-    int linhas;
-    int colunas;
-    sequencia talhoes;
-};
 
 typedef struct _terreno * terreno;
 

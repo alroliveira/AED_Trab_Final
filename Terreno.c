@@ -16,6 +16,13 @@
 #define MAXLINHA 10000
 #define MAXCOLUNA 10000
 
+struct _terreno
+{
+    int linhas;
+    int colunas;
+    sequencia talhoes;
+};
+
 terreno criaTerreno(int l,int c)
 {
     terreno T;

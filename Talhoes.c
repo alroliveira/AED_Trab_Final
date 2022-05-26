@@ -23,6 +23,8 @@ talhao criaTalhao(int n)
 {
     talhao t = (talhao) malloc(sizeof(talhao)* n);
     if(t == NULL) return NULL;
+    t->valor = 0;
+    t->escavado = 0;
     return t;
 }
 
