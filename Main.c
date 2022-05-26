@@ -67,7 +67,10 @@ void interpretador(concurso c) //(comandos a executar)//
         //getc(stdin);
         //linha[strlen(linha) - 1] = '\0';
         char *comando = strtok(linha, " ");
+<<<<<<< HEAD
         //printf("\n%s jijij\n", comando);
+=======
+>>>>>>> 6db75071aaf4d9a9452a99946088e6e1c79f6eba
         if (!strcmp(comando, "riqueza")) {                          //
             cmdRiqueza(c); break;
         }
@@ -124,11 +127,11 @@ void interpretador(concurso c) //(comandos a executar)//
 void lerEquipas(concurso c)
 {
     FILE *file = NULL;
-    equipa e ; 
+    equipa e; 
     char line[50];
     int num;
     int i;
-
+    e = daEquipa(e, line)
     file = fopen("teams", "r");
     if (file == NULL)
         return;
@@ -142,7 +145,7 @@ void lerEquipas(concurso c)
         for (i = 1; i <= num; i++)
         {
             fgets(line, sizeof(line), file);
-            adicionarArqueologoAEquipa(e, line);
+            adicionarArqueologoAEquipa(, line);
         }
     }
 } 
