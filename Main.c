@@ -59,13 +59,11 @@ void iniciarConcurso(concurso c)
 
 void interpretador(concurso c) //(comandos a executar)//
 {
-    //cmdRiqueza(c);
     while (1)
     {
         char linha[MAXCMD];
         fflush(stdin);
         fgets(linha, sizeof(linha), stdin);
-        //printf("c------------");
         printf("\n%s jijij\n", linha);
         getc(stdin);
         //linha[strlen(linha) - 1] = '\0';
@@ -81,9 +79,7 @@ void interpretador(concurso c) //(comandos a executar)//
             printf("a");
             char *nome_equipa = strtok(NULL, " ");
             if (nome_equipa == NULL)
-                //printf("c");
                 continue;
-            //printf("b");
             cmdEstrela(c, nome_equipa); break;
         }
         else if (!strcmp(comando, "escavacao")) {                   //
@@ -138,21 +134,15 @@ void lerEquipas(concurso c)
         return;
     while (fgets(line, MAXLINE, file))
     {
-//printf("%s", line);
         num = atoi(line);
-//printf("%d %s", num, line);
         fgets(line, MAXLINE, file);
         adicionarEquipaAoConcurso(c, line);
-//printf("%s\n", line);
         for (i = 1; i <= num; i++)
         {
             fgets(line, MAXLINE, file);
-//printf("%s\n", line);
             adicionarArqueologoAEquipa(e, line);
-//printf("%s\n", line);
         }
     }
-    //scanf("%s", l);
 } 
 
 
