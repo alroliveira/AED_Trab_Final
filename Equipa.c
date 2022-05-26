@@ -200,10 +200,10 @@ void alteraNumEquipa (equipa e, int num){
 }
 
 void alteraNomeEquipa (equipa e, char *nome){
-    strcpy(e->nome, nome);
+    strcpy(e->nequipaome, nome);
 }
 
-equipa daEquipa(equipa e, char *nome){
+equipa daEquipa( e, char *nome){
     int i;
     for (i = 1; i<=tamanhoSequencia((sequencia)e);i++)
         if (strcmp(nome, e->nome))
