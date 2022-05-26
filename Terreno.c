@@ -83,9 +83,8 @@ int existemTesourosEnterrados(terreno T)
     return existe;
 }
 
-char * criaMatriz(terreno T,int l,int c)
+void criaMatriz(char * m,terreno T,int l,int c)
 {
-    char m[l][c];
     for (int i = 0; i < l; i++)
     {
         for (int j = 0; j < c; j++)

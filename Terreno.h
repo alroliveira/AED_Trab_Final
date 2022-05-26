@@ -36,7 +36,7 @@ int daColunaTerreno(terreno T);
 
 int existemTesourosEnterrados(terreno T);
 
-char * criaMatriz(terreno T,int l, int c);
+void criaMatriz(char * m, terreno T,int l, int c);
 
 int daLCSalto(arqueologo a, int lS, int cS, terreno T, int controlo);
 
