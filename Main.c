@@ -267,7 +267,7 @@ void cmdSair (concurso c)      //tem um problema do comando sair
     equipa e;
     terreno T;
     
-    if(tamanhoSequencia(e)==0){
+    if(tamanhoSequencia((sequencia)e)==0){
         printf("Todas as equipas foram expulsas.\n");
     }
     else{
