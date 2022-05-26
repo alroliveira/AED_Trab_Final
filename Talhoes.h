@@ -6,18 +6,26 @@
 #define talhoes_h
 
 //TAD
-typedef struct _talhao
-{
-    int valor;
-    int escavado;
-} *talhao;
-
 typedef struct _talhao * talhao; 
 
 //funçoes
 
-talhao criaTalhao(int l,int c);
+/***********************************************
+criaTalão - Criacao da instancia da estrutura associada a um talhao.
+Parametros:
+	n - inteiro do numero de talhoes
+Retorno: apontador para a  instancia criada
+Pre-condicoes:  n < 0
+***********************************************/
+talhao criaTalhao(int n);
 
+/***********************************************
+criaIterador - Destroi a instancia da estrutura associada.
+Parametros:
+	t - Estrutura do tipo talhao
+Retorno: 
+Pre-condicoes:  t != NULL
+***********************************************/
 void destroiTalhao(talhao t);
 
 void destroiGenTalhoes(void * t);

@@ -70,7 +70,7 @@ void interpretador(concurso c) //(comandos a executar)//
         getc(stdin);
         //linha[strlen(linha) - 1] = '\0';
         char *comando = strtok(linha, " ");
-        printf("%s", comando);
+        printf("\n%s jijij\n", comando);
         if (!strcmp(comando, "riqueza")) {                          //
             cmdRiqueza(c); break;
         }

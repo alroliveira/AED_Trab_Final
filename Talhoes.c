@@ -13,9 +13,15 @@
 #include "Talhoes.h"
 #include "Arqueologo.h"
 
-talhao criaTalhao(int l,int c)
+typedef struct _talhao
 {
-    talhao t = (talhao) malloc(sizeof(talhao)* (l*c));
+    int valor;
+    int escavado;
+};
+
+talhao criaTalhao(int n)
+{
+    talhao t = (talhao) malloc(sizeof(talhao)* n);
     if(t == NULL) return NULL;
     return t;
 }

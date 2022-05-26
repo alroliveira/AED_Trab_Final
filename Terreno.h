@@ -23,7 +23,7 @@ typedef struct _terreno * terreno;
 typedef struct _talhao * talhao;
 
 
-//Funções 
+//Prototipo das funções 
 
 terreno criaTerreno(int l,int c);
 
