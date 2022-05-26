@@ -29,7 +29,7 @@ concurso criaConcurso(int l,int c)
     o = (concurso) malloc(sizeof(concurso));
     if(o == NULL)
         return NULL;
-    o->campo_de_jogo = criaTerreno((l*c)); 
+    o->campo_de_jogo = criaTerreno(l,c); 
     o->equipas = (sequencia)criaEquipa();
     return o;
 }
