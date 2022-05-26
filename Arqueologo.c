@@ -19,7 +19,7 @@
 struct _arqueologo
 {
     int emJogo;
-    int tesouros;
+    int merito;
     int penalizacao;
     char nome[NOME];
     int posicao; // guarda a ultima posição do arqueologo
@@ -34,7 +34,7 @@ arqueologo criarArqueologo(char *nome)
     if (a==NULL)
         return NULL;
     a->emJogo = 1;
-    a->tesouros = 0;
+    a->merito = 0;
     a->penalizacao = 0;
     strcpy(a->nome, nome);
     return a;
@@ -45,7 +45,7 @@ int calcularMeritoArqueologo(arqueologo a)
 {
     int merito = 0;
 
-    merito = a->tesouros - a->penalizacao;
+    merito = a->merito - a->penalizacao;
     return merito;
 }
 
@@ -98,5 +98,9 @@ int daPenalizacaoArqueologo(arqueologo a){
 }
 
 void incrementaTesouro(arqueologo a, int valor) {
-                a->tesouros += valor;
-            }
+    a->merito += valor;
+}
+
+void alteraMeritoArqueologo(arqueologo a, int merito){
+    a->merito += merito;
+}

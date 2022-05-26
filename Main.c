@@ -58,6 +58,7 @@ void iniciarConcurso(concurso c)
 
 void interpretador(concurso c) //(comandos a executar)//
 {
+    //cmdRiqueza(c);
     while (1)
     {
         char linha[MAXCMD];
@@ -66,11 +67,12 @@ void interpretador(concurso c) //(comandos a executar)//
         getc(stdin);
         //linha[strlen(linha) - 1] = '\0';
         char *comando = strtok(linha, " ");
+        printf("\n%s jijij\n", comando);
         if (!strcmp(comando, "riqueza")) {                          //
-            cmdRiqueza(c);
+            cmdRiqueza(c); break;
         }
         else if (!strcmp(comando, "terreno")) {                     //
-            cmdTerreno(c);
+            cmdTerreno(c); break;
         }
         else if (!strcmp(comando, "estrela")) {
             printf("a");
@@ -79,7 +81,7 @@ void interpretador(concurso c) //(comandos a executar)//
                 //printf("c");
                 continue;
             //printf("b");
-            cmdEstrela(c, nome_equipa);
+            cmdEstrela(c, nome_equipa); break;
         }
         else if (!strcmp(comando, "escavacao")) {                   //
             char *sLinha = strtok(NULL, " ");
@@ -95,10 +97,10 @@ void interpretador(concurso c) //(comandos a executar)//
             int iColuna = atoi(sColuna);
             if (iLinha == 0 || iColuna == 0) continue;
 
-            cmdEscavacao(c,iLinha,iColuna,sNome);
+            cmdEscavacao(c,iLinha,iColuna,sNome); break;
         }
         else if (!strcmp(comando, "reforco")) {
-            //cmdReforco(c);
+            //cmdReforco(c); break;
         }
         else if (!strcmp(comando, "equipa")) {
             char *num_equipa = strtok(NULL, " ");
@@ -110,10 +112,10 @@ void interpretador(concurso c) //(comandos a executar)//
                 printf("Equipa inexistente\n"); continue;
             }
             
-            cmdEquipa(c, i);
+            cmdEquipa(c, i); break;
         }
         else if (!strcmp(comando, "sair")) break;
-        else printf("Comando invalido\n");
+        else printf("Comando invalido\n"); break;
     }
     cmdSair(c);                    //   *sem a classificacao das equipas ao sair
 }
@@ -122,7 +124,7 @@ void interpretador(concurso c) //(comandos a executar)//
 void lerEquipas(concurso c)
 {
     FILE *file = NULL;
-    equipa e; 
+    equipa e ; 
     char line[50];
     int num;
     int i;
@@ -210,7 +212,8 @@ void cmdEquipa(concurso c, int i)
 
 void cmdEscavacao(concurso c, int lSalto, int cSalto, char *nome)
 {
-    equipa e = daEquipa(e, nome);
+    equipa e;
+    e = daEquipa(e, nome);
     terreno T;
     talhao t;
     int lFinal, cFinal;
@@ -241,16 +244,16 @@ void cmdEscavacao(concurso c, int lSalto, int cSalto, char *nome)
             }
             
             if (!daEscavadoTalhao(t) && daValorTalhao(t)){
-                t->escavado = t->escavado + 1;
+                alteraEscavadoTalhao(t, daEscavadoTalhao(t) + 1);
                 incrementaTesouro(a, daEscavadoTalhao(t));
-                t->valor = 0;
+                alteraValorTalhao(t, 0);
             }
             else if (!daEscavadoTalhao(t)){
-                t->escavado += 1;
+                alteraEscavadoTalhao(t, daEscavadoTalhao(t) + 1);
             }
             else{
-                t->escavado += 1;
-                
+                alteraEscavadoTalhao(t, daEscavadoTalhao(t) + 1);
+                alteraMeritoArqueologo(a, daEscavadoTalhao(t)*10);
             }
         }
         
