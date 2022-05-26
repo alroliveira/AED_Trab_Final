@@ -64,10 +64,10 @@ void interpretador(concurso c) //(comandos a executar)//
         char linha[MAXCMD];
         fgets(linha, sizeof(linha), stdin);
         //printf("c------------");
-        //getc(stdin);
+        getc(stdin);
         //linha[strlen(linha) - 1] = '\0';
         char *comando = strtok(linha, " ");
-        //printf("\n%s jijij\n", comando);
+        printf("\n%s jijij\n", comando);
         if (!strcmp(comando, "riqueza")) {                          //
             cmdRiqueza(c); break;
         }
