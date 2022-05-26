@@ -62,12 +62,13 @@ void interpretador(concurso c) //(comandos a executar)//
     while (1)
     {
         char linha[MAXCMD];
+        fflush(stdin);
         fgets(linha, sizeof(linha), stdin);
         //printf("c------------");
         getc(stdin);
         //linha[strlen(linha) - 1] = '\0';
         char *comando = strtok(linha, " ");
-        printf("\n%s jijij\n", comando);
+        printf("%s", comando);
         if (!strcmp(comando, "riqueza")) {                          //
             cmdRiqueza(c); break;
         }
