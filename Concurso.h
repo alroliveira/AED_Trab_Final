@@ -13,15 +13,15 @@ typedef struct _concurso * concurso;
 /***********************************************
 criaConcurso - Criacao da instancia da estrutura concurso.
 Parametros:
-	l - linhas do terreno
-    c - colunas do terreno
+	l - numero de linhas do terreno
+    c - numero de colunas do terreno
 Retorno: apontador para a  instancia criada
 Pre-condicoes:
 ***********************************************/
 concurso criaConcurso(int l, int c);
 
 /***********************************************
-destroiConcursoTD - Liberta a memoria ocupada pela instancia concurso.
+destroiConcursoTD - Liberta a memoria ocupada pela estrutura concurso.
 Parametros:
 	c - concurso a destruir
 Retorno:

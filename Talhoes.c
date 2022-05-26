@@ -39,12 +39,6 @@ void destroiGenTalhoes(void * t)
 }
 
 
-int valorTalhao(talhao t)
-{
-    return t->valor;
-}
-
-
 int daEscavadoTalhao(talhao t)
 {
     return t->escavado;
