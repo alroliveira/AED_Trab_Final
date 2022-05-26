@@ -11,7 +11,7 @@ typedef struct _terreno * terreno;
 /* Prototipos das funcoes associadas ao Arqueologo */
 
 /***********************************************
-criarArqueologo - Criacao da instancia da estrutura associada ao Arqueologo.
+criarArqueologo - Criacao da instancia da estrutura Arqueologo.
 Parametros:
 	nome - nome do arqueologo
 Retorno: apontador para a  instancia criada
@@ -38,7 +38,7 @@ Pre-condicoes: a != NULL
 char *daNomeArqueologo(arqueologo a);
 
 /***********************************************
-destroiArqueologo - Liberta a memoria ocupada pela instancia da estrutura associada ao arqueologo.
+destroiArqueologo - Liberta a memoria ocupada pela instancia arqueologo.
 Parametros:
 	a - arqueologo a destruir
 Retorno:
