@@ -123,11 +123,11 @@ void interpretador(concurso c) //(comandos a executar)//
 void lerEquipas(concurso c)
 {
     FILE *file = NULL;
-    equipa e ; 
+    equipa e; 
     char line[50];
     int num;
     int i;
-
+    e = daEquipa(e, line)
     file = fopen("teams", "r");
     if (file == NULL)
         return;
@@ -141,7 +141,7 @@ void lerEquipas(concurso c)
         for (i = 1; i <= num; i++)
         {
             fgets(line, sizeof(line), file);
-            adicionarArqueologoAEquipa(e, line);
+            adicionarArqueologoAEquipa(, line);
         }
     }
 } 
