@@ -64,11 +64,9 @@ void interpretador(concurso c) //(comandos a executar)//
         char linha[MAXCMD];
         fflush(stdin);
         fgets(linha, sizeof(linha), stdin);
-        printf("\n%s jijij\n", linha);
         getc(stdin);
         //linha[strlen(linha) - 1] = '\0';
         char *comando = strtok(linha, " ");
-        printf("\n%s jijij\n", comando);
         if (!strcmp(comando, "riqueza")) {                          //
             cmdRiqueza(c); break;
         }
@@ -76,7 +74,6 @@ void interpretador(concurso c) //(comandos a executar)//
             cmdTerreno(c); break;
         }
         else if (!strcmp(comando, "estrela")) {
-            printf("a");
             char *nome_equipa = strtok(NULL, " ");
             if (nome_equipa == NULL)
                 continue;
