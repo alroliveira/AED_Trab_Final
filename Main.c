@@ -126,8 +126,8 @@ void lerEquipas(concurso c)
     char line[50];
     int num;
     int i;
-    e = daEquipa(e, line)
-    file = fopen("teams", "r");
+    e = daEquipa(e, line);
+    file = fopen("teams.txt", "r");
     if (file == NULL)
         return;
 
@@ -140,7 +140,7 @@ void lerEquipas(concurso c)
         for (i = 1; i <= num; i++)
         {
             fgets(line, sizeof(line), file);
-            adicionarArqueologoAEquipa(, line);
+            adicionarArqueologoAEquipa(e, line);
         }
     }
 } 
