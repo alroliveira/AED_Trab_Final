@@ -46,6 +46,7 @@ int main()
     return 0;
 }
 
+
 void iniciarConcurso(concurso c)
 {
     int linha, coluna; 
@@ -159,7 +160,7 @@ void cmdTerreno(concurso c)
 {
     terreno T;
     int linha=daLinhaTerreno(T),coluna=daColunaTerreno(T);
-    char** matriz = criaMatriz(T,linha,coluna);
+    char * matriz = criaMatriz(T,linha,coluna);
     for(int i=0;i<linha;i++)
     {
         for(int j=0;j<coluna;j++)
