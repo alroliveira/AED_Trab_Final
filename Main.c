@@ -64,7 +64,7 @@ void interpretador(concurso c) //(comandos a executar)//
         fgets(linha, sizeof(linha), stdin);
         //printf("c------------");
         getc(stdin);
-        linha[strlen(linha) - 1] = '\0';
+        //linha[strlen(linha) - 1] = '\0';
         char *comando = strtok(linha, " ");
         if (!strcmp(comando, "riqueza")) {                          //
             cmdRiqueza(c);
