@@ -18,6 +18,7 @@
 // constants
 #define MAXCMD 50
 #define MAXNOME 50
+#define MAXLINE 50
 
 
 // Prototypes
@@ -65,6 +66,7 @@ void interpretador(concurso c) //(comandos a executar)//
         fflush(stdin);
         fgets(linha, sizeof(linha), stdin);
         //printf("c------------");
+        printf("\n%s jijij\n", linha);
         getc(stdin);
         //linha[strlen(linha) - 1] = '\0';
         char *comando = strtok(linha, " ");
@@ -116,7 +118,9 @@ void interpretador(concurso c) //(comandos a executar)//
             cmdEquipa(c, i); break;
         }
         else if (!strcmp(comando, "sair")) break;
-        else printf("Comando invalido\n"); break;
+        else{
+            printf("Comando invalido\n"); break;
+        }
     }
     cmdSair(c);                    //   *sem a classificacao das equipas ao sair
 }
@@ -124,28 +128,31 @@ void interpretador(concurso c) //(comandos a executar)//
 
 void lerEquipas(concurso c)
 {
-    FILE *file = NULL;
+    FILE *file;
     equipa e ; 
-    char line[50];
+    char line[MAXLINE];
     int num;
     int i;
-    e = daEquipa(e, line);
     file = fopen("teams.txt", "r");
     if (file == NULL)
         return;
-
-    while (fgets(line, sizeof(line), file))
+    while (fgets(line, MAXLINE, file))
     {
+//printf("%s", line);
         num = atoi(line);
-        fgets(line, sizeof(line), file);
+//printf("%d %s", num, line);
+        fgets(line, MAXLINE, file);
         adicionarEquipaAoConcurso(c, line);
-
+//printf("%s\n", line);
         for (i = 1; i <= num; i++)
         {
-            fgets(line, sizeof(line), file);
+            fgets(line, MAXLINE, file);
+//printf("%s\n", line);
             adicionarArqueologoAEquipa(e, line);
+//printf("%s\n", line);
         }
     }
+    //scanf("%s", l);
 } 
 
 
