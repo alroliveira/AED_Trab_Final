@@ -13,6 +13,8 @@
 #include "Equipa.h"
 #include "Talhoes.h"
 #include "Arqueologo.h"
+#define MAXLINHA 10000
+#define MAXCOLUNA 10000
 
 terreno criaTerreno(int l,int c)
 {
@@ -83,7 +85,7 @@ int existemTesourosEnterrados(terreno T)
     return existe;
 }
 
-void criaMatriz(char * m,terreno T,int l,int c)
+void criaMatriz(terreno T,int l,int c,char m[MAXLINHA][MAXCOLUNA])
 {
     for (int i = 0; i < l; i++)
     {
@@ -96,7 +98,6 @@ void criaMatriz(char * m,terreno T,int l,int c)
         }
         
     }
-    return m;
 }
 
 

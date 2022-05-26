@@ -162,7 +162,7 @@ void cmdTerreno(concurso c)
     terreno T;
     int linha=daLinhaTerreno(T),coluna=daColunaTerreno(T);
     char matriz[linha][coluna];
-    criaMatriz(matriz,T,linha,coluna);
+    criaMatriz(T,linha,coluna,matriz);
     for(int i=0;i<linha;i++)
     {
         for(int j=0;j<coluna;j++)
@@ -269,7 +269,7 @@ void cmdSair (concurso c)      //tem um problema do comando sair
     equipa e;
     terreno T;
     
-    if(tamanhoSequencia(e)==0){
+    if(tamanhoSequencia((sequencia)e)==0){
         printf("Todas as equipas foram expulsas.\n");
     }
     else{
