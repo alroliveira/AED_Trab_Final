@@ -50,9 +50,9 @@ int daValorTalhao(talhao t)
 }
 
 void alteraValorTalhao(talhao t, int valor){
-    t->valor = valor;
+    t->valor += valor;
 }
 
 void alteraEscavadoTalhao(talhao t, int escavado){
-    t->escavado = escavado;
+    t->escavado += escavado;
 }

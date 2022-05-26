@@ -28,4 +28,6 @@ int daPenalizacaoArqueologo(arqueologo a);
 
 void incrementaTesouro(arqueologo a, int valor);
 
+void alteraMeritoArqueologo(arqueologo a, int merito);
+
 #endif /* ARQUEOLOGO_H_ */
