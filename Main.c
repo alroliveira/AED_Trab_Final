@@ -23,7 +23,7 @@
 
 
 // Prototypes
-void lerTerreno(concurso con);
+//void lerTerreno(concurso con);
 void lerEquipas(concurso c);
 void interpretador(concurso c);
 void iniciarConcurso(concurso c);
@@ -34,6 +34,7 @@ void iniciarConcurso(concurso c);
     void cmdEquipa(concurso c, int i);
     void cmdEscavacao(concurso c, int lSalto, int cSalto, char *nome);
     void cmdSair(concurso c);
+    void preencheTerreno(concurso c,int linha,int coluna);
 
 
 //Funcoes
@@ -45,7 +46,7 @@ int main()
     interpretador(c);
     destroiConcursoTD(c);
     getchar();
-    return 0;
+    return 0; 
 }
 
 
@@ -55,8 +56,8 @@ void iniciarConcurso(concurso c)
     terreno T = daTerrenoDoConcurso(c);
     scanf("%d %d", &linha, &coluna);
     c = criaConcurso();
-    lerTerreno(c,linha,coluna);
     atribuiLCTerreno(linha,coluna, T);
+    preencheTerreno(c,linha,coluna);
     lerEquipas(c);
 }
 
@@ -123,16 +124,20 @@ void interpretador(concurso c) //(comandos a executar)//
 }
 
 
-void lerTerreno(concurso c,int linha,int coluna)
+void preencheTerreno(concurso c,int linha,int coluna)
 {
+    int n;
     char num[MAXCHAR];
     char at_num[MAXCHAR];
+    talhao t;
     for(int i = 0 ; i < linha ; i++)
     {
         fgets(num,MAXCHAR,stdin);
-        for(int j = 0; j < coluna ; j++)
+        for(int j = 0; j < coluna*2 ; j=j+2)
         {
-            
+            n=atoi(num[j]);
+            daValorTalhao(t,n);
+
         }
     }
 }
