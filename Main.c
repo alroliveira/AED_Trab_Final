@@ -58,7 +58,7 @@ void iniciarConcurso(concurso c)
     c = criaConcurso();
     lerTerreno(c,linha,coluna);
     atribuiLCTerreno(linha,coluna, T);
-    lerTerreno(c,linha,coluna);
+    preencheTerreno(c,linha,coluna);
     lerEquipas(c);
 }
 
