@@ -55,8 +55,7 @@ void iniciarConcurso(concurso c)
     terreno T = daTerrenoDoConcurso(c);
     scanf("%d %d", &linha, &coluna);
     c = criaConcurso(linha, coluna);
-    lerTerreno(c);
-    lerEquipas(c,linha,coluna);
+    lerTerreno(c,linha,coluna);
     atribuiLCTerreno(linha,coluna, T);
     lerEquipas(c);
 }
