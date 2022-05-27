@@ -45,7 +45,7 @@ int main()
     interpretador(c);
     destroiConcursoTD(c);
     getchar();
-    return 0;
+    return 0; 
 }
 
 
