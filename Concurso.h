@@ -6,7 +6,7 @@
 #define concurso_h
 
 #include "Terreno.h"
-#include "Sequencia.h"
+#include "sequencia.h"
 
 // TAD
 typedef struct _concurso * concurso;
@@ -16,12 +16,10 @@ typedef struct _concurso * concurso;
 /***********************************************
 criaConcurso - Criacao da instancia da estrutura concurso.
 Parametros:
-	l - numero de linhas do terreno
-    c - numero de colunas do terreno
 Retorno: apontador para a  instancia criada
 Pre-condicoes:
 ***********************************************/
-concurso criaConcurso(int l, int c);
+concurso criaConcurso();
 
 /***********************************************
 destroiConcursoTD - Liberta a memoria ocupada pela estrutura concurso.

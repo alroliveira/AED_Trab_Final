@@ -98,6 +98,7 @@ void criaMatriz(terreno T,int l,int c,char m[MAXLINHA][MAXCOLUNA])
 {
     iterador it = iteradorSequencia(T->talhoes);
     int existe = 0;
+    talhao t = elementoPosSequencia(T->talhoes, 1);
 
     for (int i = 0; i < l; i++)
     {
