@@ -55,8 +55,8 @@ void iniciarConcurso(concurso c)
     terreno T = daTerrenoDoConcurso(c);
     scanf("%d %d", &linha, &coluna);
     c = criaConcurso(linha, coluna);
-    lerTerreno(c,linha,coluna);
     atribuiLCTerreno(linha,coluna, T);
+    lerTerreno(c,linha,coluna);
     lerEquipas(c);
 }
 
@@ -127,11 +127,13 @@ void lerTerreno(concurso c,int linha,int coluna)
 {
     char num[MAXCHAR];
     char at_num[MAXCHAR];
+    talhao t;
     for(int i = 0 ; i < linha ; i++)
     {
         fgets(num,MAXCHAR,stdin);
-        for(int j = 0; j < coluna ; j++)
+        for(int j = 0; j < coluna ; j=j+2)
         {
+            preencheTalhao(t);
             
         }
     }
