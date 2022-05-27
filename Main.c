@@ -39,7 +39,7 @@ void iniciarConcurso(concurso c);
 //Funcoes
 int main()
 {
-    concurso c;
+    concurso c = criaConcurso(0, 0);;
 
     iniciarConcurso(c);
     interpretador(c);
@@ -51,11 +51,14 @@ int main()
 
 void iniciarConcurso(concurso c)
 {
-    int linha, coluna; 
+    int linha, coluna;
+    terreno T = daTerrenoDoConcurso(c);
     scanf("%d %d", &linha, &coluna);
     c = criaConcurso(linha, coluna);
     lerTerreno(c);
     lerEquipas(c,linha,coluna);
+    atribuiLCTerreno(linha,coluna, T);
+    lerEquipas(c);
 }
 
 
@@ -139,7 +142,7 @@ void lerTerreno(concurso c,int linha,int coluna)
 void lerEquipas(concurso c)
 {
     FILE *file;
-    equipa e ; 
+    equipa e = elementoPosSequencia(daEquipaDoConcurso(c), 1); 
     char line[MAXLINE];
     int num;
     int i;
@@ -163,7 +166,7 @@ void lerEquipas(concurso c)
 void cmdRiqueza(concurso c)
 {
     int riqueza = 0;
-    terreno T;
+    terreno T = daTerrenoDoConcurso(c);
     riqueza = leValorTerreno(T);
     printf("Riqueza enterrada: %d\n",riqueza);
 }
@@ -172,7 +175,7 @@ void cmdRiqueza(concurso c)
 void cmdTerreno(concurso c)
 {
 
-    terreno T;
+    terreno T = daTerrenoDoConcurso(c);
     int linha=daLinhaTerreno(T),coluna=daColunaTerreno(T);
     char matriz[linha][coluna];
     criaMatriz(T,linha,coluna,matriz);
@@ -191,6 +194,7 @@ void cmdEstrela(concurso c, char* nome_equipa)
 {
     equipa e, eq;
     arqueologo a;
+    e = (equipa)daEquipaDoConcurso(c);
 
     if (!existPorNomeEquipa(e, nome_equipa))
     {
@@ -205,7 +209,7 @@ void cmdEstrela(concurso c, char* nome_equipa)
 
 void cmdEquipa(concurso c, int i)
 {
-    equipa e;
+    equipa e = elementoPosSequencia(daEquipaDoConcurso(c), i);
    
     if (tamanhoSequencia((sequencia)e) < i)
     {
@@ -224,13 +228,14 @@ void cmdEquipa(concurso c, int i)
 
 void cmdEscavacao(concurso c, int lSalto, int cSalto, char *nome)
 {
-    equipa e;
+    equipa e = (equipa)daEquipaDoConcurso(c);
     e = daEquipa(e, nome);
-    terreno T;
+    terreno T = daTerrenoDoConcurso(c);
     talhao t;
     int lFinal, cFinal;
     arqueologo a; 
-    iterador it;
+    iterador it = iteradorSequencia(elementoPosSequencia(daArqueologoDaEquipa(e), 1));
+;
     
     if (lSalto==0 || cSalto==0){
         printf("Salto invalido\n");
@@ -244,7 +249,7 @@ void cmdEscavacao(concurso c, int lSalto, int cSalto, char *nome)
             a = (arqueologo)seguinteIterador(it);
             lFinal = daLCSalto(a, lSalto, cSalto, T, 1);
             cFinal = daLCSalto(a, lSalto, cSalto, T, 0);
-            t = elementoPosSequencia((sequencia)t, lFinal+cFinal);
+            t = elementoPosSequencia(daTalhaoDoTerreno(T), lFinal+cFinal);
 
             if(lFinal>daLinhaTerreno(T) || cFinal>daColunaTerreno(T)){
                 destroiArqueologo(a);
@@ -280,8 +285,8 @@ void cmdEscavacao(concurso c, int lSalto, int cSalto, char *nome)
 
 void cmdSair (concurso c)      //tem um problema do comando sair
 {
-    equipa e;
-    terreno T;
+    equipa e = (equipa)daEquipaDoConcurso(c);
+    terreno T = daTerrenoDoConcurso(c);
     
     if(tamanhoSequencia((sequencia)e)==0){
         printf("Todas as equipas foram expulsas.\n");

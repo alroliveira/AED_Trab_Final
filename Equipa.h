@@ -6,6 +6,7 @@
 #define _H_EQUIPA
 
 #include "Arqueologo.h"
+#include "sequencia.h"
 
 /* Tipo de dados: Equipa */
 typedef struct _equipa * equipa; 
@@ -143,4 +144,5 @@ Pre-condicoes: e != NULL && tamanhoSequencia(e)
 ***********************************************/
 equipa daEquipa(equipa e, char * nome);
 
+sequencia daArqueologoDaEquipa(equipa e);
 #endif /* EQUIPA_H_ */

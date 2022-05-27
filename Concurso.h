@@ -5,6 +5,9 @@
 #ifndef concurso_h
 #define concurso_h
 
+#include "Terreno.h"
+#include "Sequencia.h"
+
 // TAD
 typedef struct _concurso * concurso;
  
@@ -40,5 +43,9 @@ Retorno:
 Pre-condicoes: c != NULL
 ***********************************************/
 void adicionarEquipaAoConcurso(concurso c,char * nome);
+
+terreno daTerrenoDoConcurso(concurso c);
+
+sequencia daEquipaDoConcurso(concurso c);
 
 #endif

@@ -212,4 +212,8 @@ equipa daEquipa(equipa e, char * nome){
         if (strcmp(nome, e->nome))
             return e;
     return NULL;
-} 
+}
+
+sequencia daArqueologoDaEquipa(equipa e){
+    return e->arqueologos;
+}
