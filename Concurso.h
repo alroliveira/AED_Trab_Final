@@ -6,7 +6,7 @@
 #define concurso_h
 
 #include "Terreno.h"
-#include "Sequencia.h"
+#include "sequencia.h"
 
 // TAD
 typedef struct _concurso * concurso;
