@@ -23,9 +23,9 @@ struct _terreno
     sequencia talhoes;
 };
 
-terreno criaTerreno(int l,int c)
+terreno criaTerreno(int l,int c, terreno T)
 {
-    terreno T;
+    //terreno T;
     int n = l*c;
     T = (terreno) malloc(sizeof(terreno));
     if(T==NULL) return NULL;
@@ -126,6 +126,16 @@ int daLCSalto(arqueologo a, int lS, int cS, terreno T, int controlo) //se contro
         return cFinal;
 }
 
+
+void atribuiLCTerreno(int linha, int coluna, terreno T){
+    T->colunas = coluna;
+    T->linhas = linha;
+}
+
+
+sequencia daTalhaoDoTerreno(terreno T){
+    return T->talhoes;
+}
 
 /*  precisamos de uma funcao assim (pelo menos para o main)
  * 

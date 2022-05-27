@@ -29,7 +29,7 @@ concurso criaConcurso(int l,int c)
     o = (concurso) malloc(sizeof(concurso));
     if(o == NULL)
         return NULL;
-    o->campo_de_jogo = criaTerreno(l,c); 
+    o->campo_de_jogo = criaTerreno(); 
     o->equipas = (sequencia)criaEquipa();
     return o;
 }
@@ -60,3 +60,10 @@ void adicionarEquipaAoConcurso(concurso c, char *nome)// ONDE ESTA O PROTOTIPO D
     alteraNumEquipa(e, pos);
 }
 
+terreno daTerrenoDoConcurso(concurso c){
+    return c->campo_de_jogo;
+}
+
+sequencia daEquipaDoConcurso(concurso c){
+    return c->equipas;
+}

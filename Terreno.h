@@ -6,6 +6,7 @@
 #define Terreno_h
 
 #include "Arqueologo.h"
+#include "sequencia.h"
 
 #define MAXLINHA 10000
 #define MAXCOLUNA 10000
@@ -27,7 +28,7 @@ Parametros:
 Retorno: apontador para a  instancia criada
 Pre-condicoes:
 ***********************************************/
-terreno criaTerreno(int l,int c);
+terreno criaTerreno();
 
 /***********************************************
 destroiTerreno - Liberta a memoria ocupada pela estrtura terreno.
@@ -108,5 +109,7 @@ Pre-condicoes: a != NULL && T!=NULL
 ***********************************************/
 int daLCSalto(arqueologo a, int lS, int cS, terreno T, int controlo);
 
+void atribuiLCTerreno(int linha, int coluna, terreno T);
 
+sequencia daTalhaoDoTerreno( terreno T);
 #endif
