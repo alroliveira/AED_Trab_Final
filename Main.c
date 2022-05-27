@@ -34,7 +34,7 @@ void iniciarConcurso(concurso c);
     void cmdEquipa(concurso c, int i);
     void cmdEscavacao(concurso c, int lSalto, int cSalto, char *nome);
     void cmdSair(concurso c);
-    void lerTerreno(concurso c,int linha,int coluna)
+    void preencheTerreno(concurso c,int linha,int coluna)
 
 
 //Funcoes
@@ -125,7 +125,7 @@ void interpretador(concurso c) //(comandos a executar)//
 }
 
 
-void lerTerreno(concurso c,int linha,int coluna)
+void preencheTerreno(concurso c,int linha,int coluna)
 {
     int n;
     char num[MAXCHAR];
