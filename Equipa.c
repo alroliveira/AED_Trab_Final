@@ -43,7 +43,8 @@ equipa criaEquipa()
         free(e);
         return NULL;
     }
-    memset(e->nome, '\0', sizeof(e->nome)); //inicializar string nula
+    e->nome[0]= '\0';
+    //memset(e->nome, '\0', sizeof(e->nome)); //inicializar string nula
     e->emJogo = 0;
     e->nEquipa = 0;
     return e;
