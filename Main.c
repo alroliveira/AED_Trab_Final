@@ -23,7 +23,7 @@
 
 
 // Prototypes
-void lerTerreno(concurso con);
+//void lerTerreno(concurso con);
 void lerEquipas(concurso c);
 void interpretador(concurso c);
 void iniciarConcurso(concurso c);
@@ -56,7 +56,6 @@ void iniciarConcurso(concurso c)
     terreno T = daTerrenoDoConcurso(c);
     scanf("%d %d", &linha, &coluna);
     c = criaConcurso();
-    lerTerreno(c,linha,coluna);
     atribuiLCTerreno(linha,coluna, T);
     preencheTerreno(c,linha,coluna);
     lerEquipas(c);
