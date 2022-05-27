@@ -20,7 +20,7 @@ Pre-condicoes:  n < 0
 talhao criaTalhao(int n);
 
 /***********************************************
-criaIterador - Destroi a instancia da estrutura associada.
+destroiTalhao - Destroi a instancia da estrutura associada.
 Parametros:
 	t - Estrutura do tipo talhao
 Retorno: 

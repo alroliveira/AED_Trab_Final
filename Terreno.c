@@ -23,9 +23,9 @@ struct _terreno
     sequencia talhoes;
 };
 
-terreno criaTerreno(int l,int c, terreno T)
+terreno criaTerreno(int l,int c)
 {
-    //terreno T;
+    terreno T;
     int n = l*c;
     T = (terreno) malloc(sizeof(terreno));
     if(T==NULL) return NULL;
