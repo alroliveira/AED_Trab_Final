@@ -34,7 +34,7 @@ void iniciarConcurso(concurso c);
     void cmdEquipa(concurso c, int i);
     void cmdEscavacao(concurso c, int lSalto, int cSalto, char *nome);
     void cmdSair(concurso c);
-    void preencheTerreno(concurso c,int linha,int coluna)
+    void preencheTerreno(concurso c,int linha,int coluna);
 
 
 //Funcoes
