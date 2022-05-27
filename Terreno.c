@@ -93,11 +93,12 @@ int existemTesourosEnterrados(terreno T)
     return existe;
 }
 
+
 void criaMatriz(terreno T,int l,int c,char m[MAXLINHA][MAXCOLUNA])
 {
     iterador it = iteradorSequencia(T->talhoes);
     int existe = 0;
-    
+
     for (int i = 0; i < l; i++)
     {
         for (int j = 0; j < c; j++)
