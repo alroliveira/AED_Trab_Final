@@ -126,15 +126,17 @@ void interpretador(concurso c) //(comandos a executar)//
 
 void lerTerreno(concurso c,int linha,int coluna)
 {
+    int n;
     char num[MAXCHAR];
     char at_num[MAXCHAR];
     talhao t;
     for(int i = 0 ; i < linha ; i++)
     {
         fgets(num,MAXCHAR,stdin);
-        for(int j = 0; j < coluna ; j=j+2)
+        for(int j = 0; j < coluna*2 ; j=j+2)
         {
-            preencheTalhao(t);
+            n=atoi(num[j]);
+            daValorTalhao(t,n);
 
         }
     }
