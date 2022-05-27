@@ -19,6 +19,7 @@
 #define MAXCMD 50
 #define MAXNOME 50
 #define MAXLINE 50
+#define MAXCHAR 100
 
 
 // Prototypes
@@ -53,7 +54,8 @@ void iniciarConcurso(concurso c)
     int linha, coluna; 
     scanf("%d %d", &linha, &coluna);
     c = criaConcurso(linha, coluna);
-    lerEquipas(c);
+    lerTerreno(c);
+    lerEquipas(c,linha,coluna);
 }
 
 
@@ -116,6 +118,21 @@ void interpretador(concurso c) //(comandos a executar)//
         }
     }
     cmdSair(c);                    //   *sem a classificacao das equipas ao sair
+}
+
+
+void lerTerreno(concurso c,int linha,int coluna)
+{
+    char num[MAXCHAR];
+    char at_num[MAXCHAR];
+    for(int i = 0 ; i < linha ; i++)
+    {
+        fgets(num,MAXCHAR,stdin);
+        for(int j = 0; j < coluna ; j++)
+        {
+            
+        }
+    }
 }
 
 
