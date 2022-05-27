@@ -124,20 +124,25 @@ void interpretador(concurso c) //(comandos a executar)//
 }
 
 
-void preencheTerreno(concurso c,int linha,int coluna)
+void preencheTerreno(concurso c,int lin,int col)
 {
-    int n;
-    char num[MAXCHAR];
-    char at_num[MAXCHAR];
-    talhao t;
-    for(int i = 0 ; i < linha ; i++)
-    {
-        fgets(num,MAXCHAR,stdin);
-        for(int j = 0; j < coluna*2 ; j=j+2)
-        {
-            n=atoi(num[j]);
-            daValorTalhao(t,n);
+    int n, numTalhao=1;
+    char linha[MAXCHAR];
+    char num[MAXCHAR], resto[MAXCHAR];
+    terreno T = daTerrenoDoConcurso(c);
+    talhao t = elementoPosSequencia(daTalhaoDoTerreno(T), numTalhao);
 
+    for(int i = 0 ; i < lin ; i++)
+    {
+        fgets(linha,MAXCHAR,stdin);
+        for(int j = 0; j < col ; j++)
+        {
+            sscanf(linha, "%s %[^\n]", num, resto);
+            n=atoi(num);
+            alteraValorTalhao(t,n);
+            strcpy(linha, resto);
+            numTalhao += 1; 
+            t = elementoPosSequencia(daTalhaoDoTerreno(T), numTalhao);
         }
     }
 }
