@@ -136,7 +136,7 @@ void preencheTerreno(concurso c,int linha,int coluna)
         for(int j = 0; j < coluna*2 ; j=j+2)
         {
             n=atoi(num[j]);
-            daValorTalhao(t,n);
+            alteraValorTalhao(t,n);
 
         }
     }
