@@ -43,7 +43,10 @@ equipa criaEquipa()
         free(e);
         return NULL;
     }
+    e->nome[0]= '\0';
+    //memset(e->nome, '\0', sizeof(e->nome)); //inicializar string nula
     e->emJogo = 0;
+    e->nEquipa = 0;
     return e;
 }
 
@@ -209,4 +212,8 @@ equipa daEquipa(equipa e, char * nome){
         if (strcmp(nome, e->nome))
             return e;
     return NULL;
-} 
+}
+
+sequencia daArqueologoDaEquipa(equipa e){
+    return e->arqueologos;
+}

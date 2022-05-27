@@ -28,15 +28,50 @@ Pre-condicoes:  t != NULL
 ***********************************************/
 void destroiTalhao(talhao t);
 
+/***********************************************
+destroiGenTalhoes - Liberta a memoria ocupada pelas instancias da estrutura generica talhoes.
+Parametros:
+	t - endereco do talhao a destruir
+Retorno:
+Pre-condicoes: t != NULL
+***********************************************/
 void destroiGenTalhoes(void * t);
 
-int valorTalhao(talhao t);
-
+/***********************************************
+daEscavadoTalhao - Consulta se o talhao associado, ja foi escavado.
+Parametros: 
+	t - talhao
+Retorno: 1- caso tenha sido escavado; 0- caso contrario
+Pre-condicoes: t != NULL
+***********************************************/
 int daEscavadoTalhao(talhao t);
 
+/***********************************************
+daValorTalhao - Consulta o valor da estrutura talhao associada.
+Parametros: 
+	t - talhao
+Retorno: valor do talhao
+Pre-condicoes: t != NULL
+***********************************************/
 int daValorTalhao(talhao t);
 
+/***********************************************
+alteraValorTalhao - Incrementa o valor do talhao.
+Parametros:
+	t - talhao
+	valor - valor a incrementar
+Retorno: valor do talhao
+Pre-condicoes: t != NULL
+***********************************************/
 void alteraValorTalhao(talhao t, int valor);
 
+/***********************************************
+alteraEscavadoTalhao - Incrementa o numero de escavacoes do talhao.
+Parametros:
+	t - talhao
+	escavado - valor a incrementar
+Retorno: numero de escavacoes do talhao
+Pre-condicoes: t != NULL
+***********************************************/
 void alteraEscavadoTalhao(talhao t, int Escavado);
 #endif

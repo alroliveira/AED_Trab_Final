@@ -16,10 +16,17 @@
 #define MAXLINHA 10000
 #define MAXCOLUNA 10000
 
-terreno criaTerreno(int l,int c)
+struct _terreno
 {
-    terreno T;
-    int n=l*c;
+    int linhas;
+    int colunas;
+    sequencia talhoes;
+};
+
+terreno criaTerreno(int l,int c, terreno T)
+{
+    //terreno T;
+    int n = l*c;
     T = (terreno) malloc(sizeof(terreno));
     if(T==NULL) return NULL;
     T->talhoes = (sequencia)criaTalhao(n);
@@ -51,7 +58,7 @@ int leValorTerreno(terreno T)
     while(temSeguinteIterador(it))
     {
         t = (talhao)seguinteIterador(it);
-        riqueza += valorTalhao(t);
+        riqueza += daValorTalhao(t);
     }
     destroiIterador(it);
     return riqueza;
@@ -86,8 +93,13 @@ int existemTesourosEnterrados(terreno T)
     return existe;
 }
 
+
 void criaMatriz(terreno T,int l,int c,char m[MAXLINHA][MAXCOLUNA])
 {
+    iterador it = iteradorSequencia(T->talhoes);
+    int existe = 0;
+    talhao t = elementoPosSequencia(T->talhoes, 1);
+
     for (int i = 0; i < l; i++)
     {
         for (int j = 0; j < c; j++)
@@ -96,9 +108,16 @@ void criaMatriz(terreno T,int l,int c,char m[MAXLINHA][MAXCOLUNA])
                 m[i][j] = '-';
             else
                 m[i][j] = '*';
+            while(temSeguinteIterador(it) && existe == 0)
+            {
+                t = (talhao)seguinteIterador(it);
+                if(daValorTalhao(t)==0)
+                    existe = 1;
+            }
         }
         
     }
+    destroiIterador(it);
 }
 
 
@@ -119,6 +138,16 @@ int daLCSalto(arqueologo a, int lS, int cS, terreno T, int controlo) //se contro
         return cFinal;
 }
 
+
+void atribuiLCTerreno(int linha, int coluna, terreno T){
+    T->colunas = coluna;
+    T->linhas = linha;
+}
+
+
+sequencia daTalhaoDoTerreno(terreno T){
+    return T->talhoes;
+}
 
 /*  precisamos de uma funcao assim (pelo menos para o main)
  * 

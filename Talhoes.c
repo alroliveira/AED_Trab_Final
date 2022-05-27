@@ -13,7 +13,7 @@
 #include "Talhoes.h"
 #include "Arqueologo.h"
 
-typedef struct _talhao
+struct _talhao
 {
     int valor;
     int escavado;
@@ -23,6 +23,8 @@ talhao criaTalhao(int n)
 {
     talhao t = (talhao) malloc(sizeof(talhao)* n);
     if(t == NULL) return NULL;
+    t->valor = 0;
+    t->escavado = 0;
     return t;
 }
 
@@ -36,12 +38,6 @@ void destroiTalhao(talhao t)
 void destroiGenTalhoes(void * t)
 {
     destroiTalhao((talhao)t);
-}
-
-
-int valorTalhao(talhao t)
-{
-    return t->valor;
 }
 
 

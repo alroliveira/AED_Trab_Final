@@ -15,7 +15,7 @@ sequencia criaSequencia(int cap){
     if (s==NULL)
         return NULL;
 
-    s->elems = malloc(sizeof(void *) * cap);
+    s->elems = (void*)malloc(sizeof(void *) * cap);
     if (s->elems==NULL)
     {
         free(s);

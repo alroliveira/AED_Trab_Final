@@ -37,6 +37,7 @@ arqueologo criarArqueologo(char *nome)
     a->merito = 0;
     a->penalizacao = 0;
     strcpy(a->nome, nome);
+    a->posicao = 0;
     return a;
 }
 
