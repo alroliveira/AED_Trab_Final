@@ -95,6 +95,9 @@ int existemTesourosEnterrados(terreno T)
 
 void criaMatriz(terreno T,int l,int c,char m[MAXLINHA][MAXCOLUNA])
 {
+    iterador it = iteradorSequencia(T->talhoes);
+    int existe = 0;
+    
     for (int i = 0; i < l; i++)
     {
         for (int j = 0; j < c; j++)
@@ -103,9 +106,16 @@ void criaMatriz(terreno T,int l,int c,char m[MAXLINHA][MAXCOLUNA])
                 m[i][j] = '-';
             else
                 m[i][j] = '*';
+            while(temSeguinteIterador(it) && existe == 0)
+            {
+                t = (talhao)seguinteIterador(it);
+                if(daValorTalhao(t)==0)
+                    existe = 1;
+            }
         }
         
     }
+    destroiIterador(it);
 }
 
 
