@@ -39,7 +39,7 @@ void iniciarConcurso(concurso c);
 //Funcoes
 int main()
 {
-    concurso c = criaConcurso(0, 0);;
+    concurso c = criaConcurso();
 
     iniciarConcurso(c);
     interpretador(c);
@@ -54,7 +54,7 @@ void iniciarConcurso(concurso c)
     int linha, coluna;
     terreno T = daTerrenoDoConcurso(c);
     scanf("%d %d", &linha, &coluna);
-    c = criaConcurso(linha, coluna);
+    c = criaConcurso();
     lerTerreno(c,linha,coluna);
     atribuiLCTerreno(linha,coluna, T);
     lerEquipas(c);

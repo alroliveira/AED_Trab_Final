@@ -23,7 +23,7 @@ struct _concurso
 };
 
 
-concurso criaConcurso(int l,int c)
+concurso criaConcurso()
 {
     concurso o;
     o = (concurso) malloc(sizeof(concurso));
