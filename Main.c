@@ -20,7 +20,7 @@
 #define MAXNOME 50
 #define MAXLINE 50
 #define MAXCHAR 100
-#define MAX_LC 50
+#define MAX_LC 10000
 
 
 // Prototypes
