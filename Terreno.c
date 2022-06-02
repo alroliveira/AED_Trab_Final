@@ -15,6 +15,7 @@
 #include "Arqueologo.h"
 #define MAXLINHA 10000
 #define MAXCOLUNA 10000
+#define MAX_T 50
 
 struct _terreno
 {
@@ -23,15 +24,25 @@ struct _terreno
     sequencia talhoes;
 };
 
-terreno criaTerreno(int l,int c)
+terreno criaTerreno()
 {
     terreno T;
-    int n = l*c;
-    T = (terreno) malloc(sizeof(terreno));
-    if(T==NULL) return NULL;
-    T->talhoes = (sequencia)criaTalhao(n);
-    T->colunas = c;
-    T->linhas = l;
+    T= (terreno) malloc(sizeof(struct _terreno));
+
+    if (T==NULL)
+    {
+        return NULL;
+    }
+
+    T->talhoes = criaSequencia(MAX_T);
+    if (T->talhoes==NULL)
+    {
+        free(T);
+        return NULL;
+    }
+    
+    T->colunas = 0;
+    T->linhas = 0;
     return T;
 }
 

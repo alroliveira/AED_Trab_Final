@@ -20,6 +20,7 @@
 #define MAXNOME 50
 #define MAXLINE 50
 #define MAXCHAR 100
+#define MAX_LC 50
 
 
 // Prototypes
@@ -55,7 +56,7 @@ void iniciarConcurso(concurso c)
     int linha, coluna;
     terreno T = daTerrenoDoConcurso(c);
     scanf("%d %d", &linha, &coluna);
-    c = criaConcurso();
+    //c = criaConcurso();
     atribuiLCTerreno(linha,coluna, T);
     preencheTerreno(c,linha,coluna);
     lerEquipas(c);
@@ -186,7 +187,7 @@ void cmdTerreno(concurso c)
 
     terreno T = daTerrenoDoConcurso(c);
     int linha=daLinhaTerreno(T),coluna=daColunaTerreno(T);
-    char matriz[linha][coluna];
+    char matriz[MAX_LC][MAX_LC];
     criaMatriz(T,linha,coluna,matriz);
     for(int i=0;i<linha;i++)
     {
