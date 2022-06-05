@@ -160,6 +160,19 @@ sequencia daTalhaoDoTerreno(terreno T){
     return T->talhoes;
 }
 
+
+void adicionarTalhaoaoTerreno (terreno T, int val)
+{
+    talhao t;
+    int pos;
+    t = criaTalhao();
+    pos = tamanhoSequencia(T->talhoes) + 1;
+    adicionaPosSequencia(T->talhoes, (void*) t, pos);
+    alteraValorTalhao(t, val);
+}
+
+
+
 /*  precisamos de uma funcao assim (pelo menos para o main)
  * 
  *  void existemTesourosEnterrados()

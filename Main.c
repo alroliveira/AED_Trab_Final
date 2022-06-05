@@ -127,11 +127,10 @@ void interpretador(concurso c) //(comandos a executar)//
 
 void preencheTerreno(concurso c,int lin,int col)
 {
-    int n, numTalhao=1;
+    int n;
     char linha[MAXCHAR];
     char num[MAXCHAR], resto[MAXCHAR];
     terreno T = daTerrenoDoConcurso(c);
-    talhao t = elementoPosSequencia(daTalhaoDoTerreno(T), numTalhao);
 
     for(int i = 0 ; i < lin ; i++)
     {
@@ -140,10 +139,9 @@ void preencheTerreno(concurso c,int lin,int col)
         {
             sscanf(linha, "%s %[^\n]", num, resto);
             n=atoi(num);
-            alteraValorTalhao(t,n);
+
+            adicionarTalhaoaoTerreno (T, n);
             strcpy(linha, resto);
-            numTalhao += 1; 
-            t = elementoPosSequencia(daTalhaoDoTerreno(T), numTalhao);
         }
     }
 }
