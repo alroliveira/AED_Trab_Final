@@ -56,7 +56,6 @@ void iniciarConcurso(concurso c)
     int linha, coluna;
     terreno T = daTerrenoDoConcurso(c);
     scanf("%d %d", &linha, &coluna);
-    //c = criaConcurso();
     atribuiLCTerreno(linha,coluna, T);
     preencheTerreno(c,linha,coluna);
     lerEquipas(c);
@@ -129,16 +128,34 @@ void preencheTerreno(concurso c,int lin,int col)
 {
     int n;
     char linha[MAXCHAR];
-    char num[MAXCHAR], resto[MAXCHAR];
+    char resto[MAXCHAR];
+    char *num;
     terreno T = daTerrenoDoConcurso(c);
+    int controlo;
 
-    for(int i = 0 ; i < lin ; i++)
+
+    for(int i = 1 ; i <= lin ; i++)
     {
-        fgets(linha,MAXCHAR,stdin);
-        for(int j = 0; j < col ; j++)
+        fflush(stdin);
+        fgets(linha, sizeof(linha), stdin);
+        getc(stdin);
+        controlo = 1;
+
+//printf("\nlinha- %s %d\n\n", linha, i);
+        
+        for(int j = 1; j <= col ; j++)
         {
-            sscanf(linha, "%s %[^\n]", num, resto);
-            n=atoi(num);
+            if (controlo){
+                num = strtok(linha, " ");
+                n=atoi(num);
+                controlo = 0;
+//printf("n_umero%d- %s / %d\n\n", j, num, n);
+            }
+            else{
+                num = strtok(NULL, " ");
+                n=atoi(num);
+//printf("numero%d- %s / %d\n\n", j, num, n);
+            }
 
             adicionarTalhaoaoTerreno (T, n);
             strcpy(linha, resto);
