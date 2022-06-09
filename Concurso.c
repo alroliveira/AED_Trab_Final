@@ -26,11 +26,11 @@ struct _concurso
 concurso criaConcurso()
 {
     concurso o;
-    o = (concurso) malloc(sizeof(concurso));
+    o = (concurso) malloc(sizeof(struct _concurso));
     if(o == NULL)
         return NULL;
     o->campo_de_jogo = criaTerreno(); 
-    o->equipas = (sequencia)criaEquipa();
+    o->equipas = (sequencia)criaSequencia(MAX_E);
     return o;
 }
 
