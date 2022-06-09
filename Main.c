@@ -20,6 +20,7 @@
 #define MAXNOME 50
 #define MAXLINE 50
 #define MAXCHAR 100
+#define MAX_LC 10000
 
 
 // Prototypes
@@ -55,7 +56,7 @@ void iniciarConcurso(concurso c)
     int linha, coluna;
     terreno T = daTerrenoDoConcurso(c);
     scanf("%d %d", &linha, &coluna);
-    c = criaConcurso();
+    //c = criaConcurso();
     atribuiLCTerreno(linha,coluna, T);
     preencheTerreno(c,linha,coluna);
     lerEquipas(c);
@@ -124,20 +125,23 @@ void interpretador(concurso c) //(comandos a executar)//
 }
 
 
-void preencheTerreno(concurso c,int linha,int coluna)
+void preencheTerreno(concurso c,int lin,int col)
 {
     int n;
-    char num[MAXCHAR];
-    char at_num[MAXCHAR];
-    talhao t;
-    for(int i = 0 ; i < linha ; i++)
-    {
-        fgets(num,MAXCHAR,stdin);
-        for(int j = 0; j < coluna*2 ; j=j+2)
-        {
-            n=atoi(num[j]);
-            alteraValorTalhao(t,n);
+    char linha[MAXCHAR];
+    char num[MAXCHAR], resto[MAXCHAR];
+    terreno T = daTerrenoDoConcurso(c);
 
+    for(int i = 0 ; i < lin ; i++)
+    {
+        fgets(linha,MAXCHAR,stdin);
+        for(int j = 0; j < col ; j++)
+        {
+            sscanf(linha, "%s %[^\n]", num, resto);
+            n=atoi(num);
+
+            adicionarTalhaoaoTerreno (T, n);
+            strcpy(linha, resto);
         }
     }
 }
@@ -181,7 +185,7 @@ void cmdTerreno(concurso c)
 
     terreno T = daTerrenoDoConcurso(c);
     int linha=daLinhaTerreno(T),coluna=daColunaTerreno(T);
-    char matriz[linha][coluna];
+    char matriz[MAX_LC][MAX_LC];
     criaMatriz(T,linha,coluna,matriz);
     for(int i=0;i<linha;i++)
     {

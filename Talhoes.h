@@ -13,14 +13,13 @@ typedef struct _talhao * talhao;
 /***********************************************
 criaTalão - Criacao da instancia da estrutura associada a um talhao.
 Parametros:
-	n - inteiro do numero de talhoes
 Retorno: apontador para a  instancia criada
-Pre-condicoes:  n < 0
+Pre-condicoes:
 ***********************************************/
-talhao criaTalhao(int n);
+talhao criaTalhao();
 
 /***********************************************
-criaIterador - Destroi a instancia da estrutura associada.
+destroiTalhao - Destroi a instancia da estrutura associada.
 Parametros:
 	t - Estrutura do tipo talhao
 Retorno: 

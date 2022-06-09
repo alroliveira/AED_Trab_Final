@@ -31,7 +31,8 @@ equipa criaEquipa()
 {
     equipa e;
 
-    e = (equipa)criaSequencia(MAX_E); 
+    e = (equipa) malloc(sizeof(struct _equipa));
+
     if (e==NULL)
     {
         return NULL;

@@ -112,4 +112,6 @@ int daLCSalto(arqueologo a, int lS, int cS, terreno T, int controlo);
 void atribuiLCTerreno(int linha, int coluna, terreno T);
 
 sequencia daTalhaoDoTerreno( terreno T);
+
+void adicionarTalhaoaoTerreno (terreno T, int val);
 #endif

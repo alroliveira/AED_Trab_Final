@@ -19,9 +19,9 @@ struct _talhao
     int escavado;
 };
 
-talhao criaTalhao(int n)
+talhao criaTalhao(int nt)
 {
-    talhao t = (talhao) malloc(sizeof(talhao)* n);
+    talhao t = (talhao) malloc(sizeof(talhao));
     if(t == NULL) return NULL;
     t->valor = 0;
     t->escavado = 0;
